@@ -147,10 +147,10 @@ p{
 }
 
 /*** Contact Form ***/
-.wpcf7{
+/*.wpcf7{
     @apply bg-rpgreen-500;
 }
-/*.wpcf7-form{
+.wpcf7-form{
 
     @apply m-0 p-8;
 
