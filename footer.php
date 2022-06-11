@@ -7,11 +7,11 @@
 
 <?php do_action( 'tailpress_content_after' ); ?>
 
-<div class="flex">
-	<div>
+<div class="flex flex-row bg-rpgreen-900">
+	<div class="basis-2/3 p-4">
 		<?php echo do_shortcode('[contact-form-7 id="338" title="Contact form"]');?>
 	</div>
-	<div>
+	<div class="basis-1/3 p-4 bg-rpgray-500 text-white">
 		<h2>More details Here</h2>
 		<h3>How about this one? jhgjfshg asjfhasdfj</h3>
 	</div>
