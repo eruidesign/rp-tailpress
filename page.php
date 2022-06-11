@@ -22,7 +22,7 @@
 					}
 				?>
 
-				<?php get_template_part( 'template-parts/content', 'single' ); ?>
+				<?php get_template_part( 'template-parts/content', 'single-page' ); ?>
 
 				<?php
 				// If comments are open or we have at least one comment, load up the comment template.
