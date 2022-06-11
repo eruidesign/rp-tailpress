@@ -4,8 +4,14 @@
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<section class="hero min-h-[600px] bg-gradient-to-r from-rpgray-500" style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'banner-1440x600');?>);">
-				<div class="hero-overlay bg-opacity-60"></div>
+		<?php $banner_url = get_the_post_thumbnail_url(get_the_ID(),'banner-1440x600');?>
+
+		<?php if($banner_url) : ?>
+			<section class="hero min-h-[600px] style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'banner-1440x600');?>);">
+		<?php else : ?>
+			<section class="hero min-h-[600px] bg-gradient-to-r from-gray-400" >
+		<?php endif;?>
+			<div class="hero-overlay bg-opacity-60"></div>
 				<div class="container mx-auto py-10 hero-content text-neutral-content">
 					<div class="max-w-md">
 					<h1 class="mb-5 text-5xl font-bold"><?php the_title();?></h1>
