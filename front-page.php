@@ -7,6 +7,9 @@
     $section_2_ID = 2; //About Us
     $section_2 = get_post($section_2_ID);
 
+    $link_1_ID = 380; //Meet our team
+    $link_1 = get_post($link_1_ID);
+
     $section_3_ID = 300; //Coaching
     $section_3 = get_post($section_3_ID);
     
@@ -56,7 +59,7 @@
             
             <div class="hero-content p-8 bg-rpgray-900 basis-[32rem] text-white order-1">
                 <?php echo apply_filters('the_content', $section_2->post_content);?>
-                <a href="<?php echo get_permalink($section_2_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-gray-500">Meet our teachers<span> →</span></a>
+                <a href="<?php echo get_permalink($link_1_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-gray-500"><?php echo $link_1->post_name;?><span> →</span></a>
             </div>
         </div>
     </div>
