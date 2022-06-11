@@ -152,19 +152,19 @@ p{
   @apply grid grid-cols-2; 
 
   .wpcf7-form-control-wrap{
-    @apply p-4 rounded mb-4 border-solid border-2 bg-rpgray-900;
+    @apply mb-4;
   }
 
   .your-message{
     @apply col-span-2;
   }
 
-  .wpcf7-form-control{
-    @apply w-full;
+  .wpcf7-form-control:not(.wpcf7-submit){
+    @apply w-full p-4 rounded-lg bg-white;
   }
 
   .wpcf7-submit{
-    @apply bg-rpgreen-900 p-4 text-lg text-white rounded-full border-solid border-2 bg-rpgray-900;
+    @apply bg-rpgreen-900 p-4 text-lg text-white rounded-full border-solid border-2 border-rpgray-900;
   }
 }
 /*.wpcf7{
