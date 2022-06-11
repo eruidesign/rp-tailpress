@@ -524,6 +524,11 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(59 130 246 / 0))
 }
 
+.from-rpgray-500 {
+  --tw-gradient-from: #565963;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(86 89 99 / 0))
+}
+
 .fill-rpgray-900 {
   fill: #414042
 }
