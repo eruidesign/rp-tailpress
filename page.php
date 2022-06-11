@@ -7,7 +7,7 @@
 		<?php $banner_url = get_the_post_thumbnail_url(get_the_ID(),'banner-1440x600');?>
 
 		<?php if($banner_url) : ?>
-			<section class="hero min-h-[600px] style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'banner-1440x600');?>);">
+			<section class="hero min-h-[600px]" style="background-image: url(<?php echo $banner_url;?>">
 		<?php else : ?>
 			<section class="hero min-h-[600px] bg-gradient-to-r from-gray-400" >
 		<?php endif;?>
