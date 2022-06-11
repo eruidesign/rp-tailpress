@@ -380,6 +380,10 @@
   border-radius: 0.5rem
 }
 
+.rounded-full {
+  border-radius: 9999px
+}
+
 .rounded-tl-lg {
   border-top-left-radius: 0.5rem
 }
@@ -398,6 +402,10 @@
 
 .border-b {
   border-bottom-width: 1px
+}
+
+.border-solid {
+  border-style: solid
 }
 
 .border-transparent {
