@@ -58,7 +58,7 @@
 				wp_nav_menu(
 					array(
 						'container_id'    => 'primary-menu',
-						'container_class' => 'hidden uppercase font-bold bg-gray-100 mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
+						'container_class' => 'hidden uppercase mt-4 p-4 lg:mt-0 lg:p-0 lg:bg-transparent lg:block',
 						'menu_class'      => 'lg:flex lg:-mx-4',
 						'theme_location'  => 'primary',
 						'li_class'        => 'lg:mx-4 text-rppurple-900 hover:text-rppurple-500',

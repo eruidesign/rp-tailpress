@@ -810,10 +810,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   align-items: center;
 }
 
-.items-stretch {
-  align-items: stretch;
-}
-
 .justify-center {
   justify-content: center;
 }
@@ -938,11 +934,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
 .bg-gray-500\/50 {
   background-color: rgb(107 114 128 / 0.5);
 }
@@ -953,6 +944,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-rpgreen-900\/50 {
   background-color: rgb(123 164 64 / 0.5);
+}
+
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-60 {
@@ -1594,7 +1590,7 @@ p {
     padding: 3px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);*/
-  top: 0;
+  top: -3px;
   right: -15px;
   position: absolute;
 }
@@ -1704,10 +1700,6 @@ p {
 
   .lg\:items-center {
     align-items: center;
-  }
-
-  .lg\:items-stretch {
-    align-items: stretch;
   }
 
   .lg\:justify-between {
