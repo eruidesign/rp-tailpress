@@ -159,12 +159,16 @@ p{
     @apply col-span-2;
   }
 
-  .wpcf7-form-control:not(.wpcf7-submit){
+  .wpcf7-form-control:not(.wpcf7-submit):not(.wpcf7-checkbox){
     @apply w-full p-4 rounded-lg bg-white;
   }
 
+  .area-of-interest{
+    @apply col-span-2 p-4 rounded-lg bg-white;
+  }
+
   .wpcf7-submit{
-    @apply bg-rpgreen-900 p-4 text-lg text-white rounded-full border-solid border-2 border-rpgray-900;
+    @apply bg-white px-4 py-2 text-lg text-rpgray-900 rounded border-solid border-2 border-rpgray-900;
   }
 }
 /*.wpcf7{

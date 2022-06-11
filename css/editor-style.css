@@ -688,6 +688,11 @@
   color: rgb(220 38 38 / var(--tw-text-opacity))
 }
 
+.text-rpgray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(65 64 66 / var(--tw-text-opacity))
+}
+
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale
