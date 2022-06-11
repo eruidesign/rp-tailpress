@@ -4,7 +4,7 @@
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<section class="hero min-h-[600px]" style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'banner-1440x600');?>);">
+			<section class="hero min-h-[600px] bg-gradient-to-r from-rp-gray-500" style="background-image: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'banner-1440x600');?>);">
 				<div class="hero-overlay bg-opacity-60"></div>
 				<div class="container mx-auto py-10 hero-content text-neutral-content">
 					<div class="max-w-md">

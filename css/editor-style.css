@@ -439,6 +439,11 @@
   border-color: rgb(101 45 144 / var(--tw-border-opacity))
 }
 
+.border-r-rpgray-500 {
+  --tw-border-opacity: 1;
+  border-right-color: rgb(86 89 99 / var(--tw-border-opacity))
+}
+
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity))
@@ -508,6 +513,15 @@
 
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops))
+}
+
+.from-blue-500 {
+  --tw-gradient-from: #3b82f6;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(59 130 246 / 0))
 }
 
 .fill-rpgray-900 {
