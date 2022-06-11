@@ -515,6 +515,11 @@
   background-color: rgb(86 89 99 / var(--tw-bg-opacity))
 }
 
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity))
+}
+
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6
 }
