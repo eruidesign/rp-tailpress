@@ -22,7 +22,7 @@
                             <?php  if($thumb_url) :?>
                                 <img src="<?php echo $thumb_url;?>" alt="" class="w-full">
                             <?php else : ?>
-                                <div class="w-full aspect-[4/3]">&nbsp;</div>
+                                <div class="w-full aspect-[4/3] bg-gray-400">&nbsp;</div>
                             <?php endif;?>
                                 <h3 class="my-4 text-xl"><?php echo $page->post_title; ?></h3>
                             <div class="text-gray-400 p-4 text-sm text-justify"><?php echo apply_filters('the_content', $page->post_content);?></div>
