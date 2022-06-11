@@ -13,7 +13,7 @@
             $pages = get_pages( array( 'child_of' => $postid, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
         ?>
         <?php if($pages) : ?>
-            <div class="grid grid-cols-4 gap-4 mb-8">
+            <div class="grid grid-cols-5 gap-4 mb-8">
                 <?php foreach ($pages as $page) : ?> 
                     <div class="border rounded-lg p-4">
                         <h3><?php echo $page->post_title; ?></h3>
