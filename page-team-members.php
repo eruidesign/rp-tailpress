@@ -68,108 +68,57 @@
         <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
     <?php endif; ?>
 
-    <div class="accordion" id="accordionExample">
-  <div class="accordion-item bg-white border border-gray-200">
-    <h2 class="accordion-header mb-0" id="headingOne">
-      <button class="
-        accordion-button
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-        aria-controls="collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-      data-bs-parent="#accordionExample">
-      <div class="accordion-body py-4 px-5">
-        <strong>This is the first item's accordion body.</strong> It is shown by default,
-        until the collapse plugin adds the appropriate classes that we use to style each
-        element. These classes control the overall appearance, as well as the showing and
-        hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-        our default variables. It's also worth noting that just about any HTML can go within
-        the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
+    <div class="app min-h-screen bg-grey-lightest font-sans overflow-hidden">
+
+  <div class="h-32 flex items-center justify-center bg-indigo">
+    <h1 class="text-2xl text-white -mt-8">Details &amp; Summary</h1>
   </div>
-  <div class="accordion-item bg-white border border-gray-200">
-    <h2 class="accordion-header mb-0" id="headingTwo">
-      <button class="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-        aria-controls="collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-      data-bs-parent="#accordionExample">
-      <div class="accordion-body py-4 px-5">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default,
-        until the collapse plugin adds the appropriate classes that we use to style each
-        element. These classes control the overall appearance, as well as the showing and
-        hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-        our default variables. It's also worth noting that just about any HTML can go within
-        the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
+
+  <div class="wrapper border-b-2 -mt-8 bg-white overflow-hidden mx-auto max-w-md rounded shadow-lg">
+
+    <h3 class="bg-grey-lightest px-8 py-6 font-semibold">Frequently Asked Questions</h3>
+
+    <div class="question-wrap mx-8 mt-2">
+      <details class="question py-4 border-b border-grey-lighter">
+
+        <summary class="flex items-center font-bold">My childhoood
+          <button class="ml-auto">
+          <svg class="fill-current opacity-75 w-4 h-4 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+        </button>
+        </summary>
+
+        <div class="mt-4 leading-normal text-md ">I lived near lake Eerie and I really miss sunsets over the water. Fuga perspiciatis quidem sunt animi.  We can all grab at the chance to be handsome farmers. YEAH you can have 21 sons that'll be blood when they marry my daughters. And the pain that we left at the station will stay in a jar behind us. We can pickle the pain into blue ribbon winners at county contests....
+        Gosh. I loved her to bits</div>
+      </details>
+
+      <details class="question py-4 border-b border-grey-lighter">
+
+        <summary class="flex items-center">Ex nihilo nihil
+          <button class="ml-auto">
+          <svg class="fill-current opacity-75 w-4 h-4 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+        </button>
+        </summary>
+
+        <div class="mt-4 leading-normal text-md">
+ <p>ništavilo se vraća sebi kao sve u svemu</p>
+        </div>
+      </details>
+
+      <details class="question py-4 border-b border-grey-lighter">
+
+        <summary class="flex items-center">Estuarij iznad rijeke [r]iverice
+          <button class="ml-auto">
+          <svg class="fill-current opacity-75 w-4 h-4 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+        </button>
+        </summary>
+
+        <div class="mt-4 leading-normal text-md ">Zašto pitaš mene? Pitaj šulasice. Question remains - should I invest in a bycicle? ! 
+          Estuarij iznad rijeke Iverice [riverice].</div>
+      </details>
     </div>
+
   </div>
-  <div class="accordion-item bg-white border border-gray-200">
-    <h2 class="accordion-header mb-0" id="headingThree">
-      <button class="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-        aria-controls="collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-      data-bs-parent="#accordionExample">
-      <div class="accordion-body py-4 px-5">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default,
-        until the collapse plugin adds the appropriate classes that we use to style each
-        element. These classes control the overall appearance, as well as the showing and
-        hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-        our default variables. It's also worth noting that just about any HTML can go within
-        the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
+  
 </div>
 
 </div>
