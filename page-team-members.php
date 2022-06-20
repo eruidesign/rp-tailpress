@@ -36,12 +36,12 @@
 
 
 
-        <div class="max-w-3xl w-full mx-auto z-10">
+        <div class="max-w-3xl mx-auto z-10">
             <div class="flex flex-col">
                 <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
                     <div class="flex-none sm:flex">
                         <div class=" relative h-32 w-32   sm:mb-0 mb-3">
-                            <img src="" alt="aji" class=" w-32 h-32 object-cover rounded-2xl">
+                            <div  class="w-32 h-32 object-cover rounded-2xl bg-gray-500 text-white"><?php the_title(); ?></div>
                         </div>
                         
                         <div class="flex-auto sm:ml-5 justify-evenly">
