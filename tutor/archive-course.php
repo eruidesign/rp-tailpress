@@ -20,6 +20,8 @@ $curriculum_ID = 15;
 $curriculum_page = get_post($curriculum_ID);
 ?>
 
+<?php if ( is_post_type_archive() ) : ?>
+
 <section class="hero min-h-[600px]" style="background-image: url(<?php echo get_the_post_thumbnail_url($curriculum_ID,'banner-1440x600');?>);">
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="container mx-auto py-10 hero-content text-neutral-content">
@@ -38,14 +40,18 @@ $curriculum_page = get_post($curriculum_ID);
 		}
 	?>
 
-	<h2 class="text-xl font-bold uppercase mb-4">Courses Categories</h2>
+</div>
 
+<div class="container mx-auto">
+
+	<h2 class="text-xl font-bold uppercase mb-4">Courses Categories</h2>
 
 	<?php
 		$args = array(
 			'taxonomy'	=> 'course-category',
 			//'exclude'	=> array(23,32), //Uncategorized, Art Courses
-			'hide_empty' => false
+			'parent'   => 0,
+			'hide_empty' => false,
 		);
 		$courses_categories = get_terms( $args );
 	?>
@@ -101,6 +107,90 @@ $curriculum_page = get_post($curriculum_ID);
 	<?php endif;?>
 
 </div>
+
+<?php // if it' not post type archive -> it's term. We list child terms and lessons ?>
+<?php else : ?>
+	<?php 
+		$current = get_queried_object();
+	?>
+
+	<section class="hero min-h-[600px] bg-gradient-to-r from-gray-400">
+		<div class="hero-overlay bg-opacity-60"></div>
+		<div class="container mx-auto py-10 hero-content text-neutral-content">
+			<div class="max-w-md">
+				<h1 class="mb-5 text-5xl font-bold"><?php echo $current->name;?></h1>
+				<p class="mb-5"><?php echo $current->description;?></p>
+			</div>
+		</div>
+	</section>
+
+	<div class="container mx-auto">
+
+	<?php
+		if ( function_exists('yoast_breadcrumb') ) {
+			yoast_breadcrumb( '<div id="breadcrumbs" class="my-8">','</div>' );
+		}
+	?>
+
+	</div>
+
+	<?php
+		$args = array(
+			'taxonomy'	=> 'course-category',
+			//'exclude'	=> array(23,32), //Uncategorized, Art Courses
+			'parent'   => $current->term_id,
+			'hide_empty' => false,
+		);
+		$child_terms = get_terms( $args );
+	?>
+
+	<div class="container mx-auto py-10">
+
+		<?php if($child_terms) : ?>
+			<?php foreach ($child_terms as $term) : ?>
+				<h2 class="mb-4 text-4xl font-bold"><?php echo $term->name;?></h2>
+
+				<?php 
+				
+					$args = array(  
+						'post_type' => 'courses',
+						'tax_query' => array(
+							array(
+								'taxonomy' => 'course-category',
+								'field' => 'slug', //can be set to ID
+								'terms' => $term->name, //if field is ID you can reference by cat/term number
+							)
+						)
+
+					);
+
+					$courses = new WP_Query( $args ); 
+				?>
+				
+				<div class="tutor-course-list tutor-grid tutor-grid-4">
+					
+				<?php if ( $courses->have_posts() ) : while ( $courses->have_posts() ) : $courses->the_post(); ?>
+					<div class="tutor-card tutor-course-card">
+						<?php tutor_load_template( 'loop.course' );?>
+						<?php //the_title(); ?>
+						<?php //the_excerpt(); ?>
+					</div>
+				<?php endwhile;
+					wp_reset_postdata(); 
+				?>
+				<?php else : ?>
+					<p><?php _e( 'No Courses Yet!' ); ?></p>
+				<?php endif;?>
+				<?php //tutor_course_loop_end();?>
+				</div>
+			<?php endforeach;?>
+		<?php else : ?>
+			<p>No child terms, just lessons</p>
+		<?php endif;?>
+
+	</div>
+
+<?php endif;?>
 
 <?php
 tutor_utils()->tutor_custom_footer(); ?>
