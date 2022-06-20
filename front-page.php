@@ -59,7 +59,7 @@
             
             <div class="hero-content p-8 bg-rpgray-900 basis-[32rem] text-white order-1">
                 <?php echo apply_filters('the_content', $section_2->post_content);?>
-                <a href="<?php echo get_permalink($link_1_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-gray-500"><?php echo $link_1->post_name;?><span> →</span></a>
+                <a href="<?php echo get_permalink($link_1_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-gray-500"><?php echo $link_1->post_title;?><span> →</span></a>
             </div>
         </div>
     </div>
