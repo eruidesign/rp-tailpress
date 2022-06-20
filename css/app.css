@@ -1076,6 +1076,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   fill: currentColor;
 }
 
+.fill-rppurple-500 {
+  fill: #8c62ac;
+}
+
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1289,6 +1293,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
+.text-rppurple-500 {
+  --tw-text-opacity: 1;
+  color: rgb(140 98 172 / var(--tw-text-opacity));
 }
 
 .antialiased {
