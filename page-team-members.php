@@ -32,11 +32,33 @@
     <?php if ( $the_query->have_posts() ) : ?>
         
         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-        
-        <h2><?php the_title(); ?></h2>
-    
-        <div class="entry-content">
-            <?php the_excerpt(); ?> 
+
+
+
+
+        <div class="max-w-3xl w-full mx-auto z-10">
+            <div class="flex flex-col">
+                <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
+                    <div class="flex-none sm:flex">
+                        <div class=" relative h-32 w-32   sm:mb-0 mb-3">
+                            <img src="" alt="aji" class=" w-32 h-32 object-cover rounded-2xl">
+                        </div>
+                        
+                        <div class="flex-auto sm:ml-5 justify-evenly">
+                            <div class="flex items-center justify-between sm:mt-2">
+                                <div class="flex items-center">
+                                    <div class="flex flex-col">
+                                        <h2 class="w-full flex-none text-lg text-gray-800 font-bold leading-none"><?php the_title(); ?></h2>
+                                        <div class="flex-auto text-gray-500 my-1">
+                                            <span class="mr-3 "><?php the_excerpt(); ?> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <?php endwhile;
