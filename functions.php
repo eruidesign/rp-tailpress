@@ -158,6 +158,27 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
+
 add_post_type_support( 'page', 'excerpt' );
 
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
+
+// Our custom post type function
+function create_posttype() {
+  
+    register_post_type( 'team-members',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Team Members' ),
+                'singular_name' => __( 'Team Member' ),
+				'add_new_item' => __( 'Add New Team Member'),
+            ),
+            'public' => true,
+            'has_archive' => true,
+			'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+        )
+    );
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_posttype' );
