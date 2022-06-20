@@ -25,7 +25,7 @@
 
 
     <?php 
-        $args = array( 'post_type' => 'team-member');
+        $args = array( 'post_type' => 'team-members');
         $the_query = new WP_Query( $args ); 
     ?>
     
