@@ -55,7 +55,7 @@
 
                                         <?php if ( get_the_content() ) :?>
 
-                                            <details class="question py-4">
+                                            <details class="question">
 
                                                 <summary class="flex items-center text-rppurple-500">More
                                                 <button>
