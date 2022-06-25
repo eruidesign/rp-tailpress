@@ -166,6 +166,28 @@ $curriculum_page = get_post($curriculum_ID);
 
 					$courses = new WP_Query( $args ); 
 				?>
+
+		<?php 
+
+		$query_args = array(
+		'post_type' => 'product',
+		'tax_query' => array(
+			'relation' => 'OR',
+			array(
+				'taxonomy' => 'product_cat',
+				'field'    => 'slug',
+				'terms'    => $term->name,
+			),
+			array(
+				'taxonomy' => 'product_type',
+				'field'    => 'slug',
+				'terms'    => 'woosb', 
+			),
+			),
+		);
+		$products = new WP_Query($query_args);
+
+		?>
 				
 				<div class="tutor-course-list tutor-grid tutor-grid-4">
 					
@@ -178,6 +200,23 @@ $curriculum_page = get_post($curriculum_ID);
 				<?php endwhile;
 					wp_reset_postdata(); 
 				?>
+				<?php //if($products) : ?>
+						<?php //echo $products[0]->name;?>
+					<?php //endif;?>
+
+
+					<?php if ( $products->have_posts() ) : while ( $products->have_posts() ) : $products->the_post(); ?>
+						<div class="tutor-card tutor-course-card">
+							<?php wc_get_template_part( 'content', 'product' );?>
+						</div>
+						<?php endwhile;
+							wp_reset_postdata(); 
+						?>
+						<?php endif;?>
+					</div>
+
+
+					
 				<?php else : ?>
 					<p><?php _e( 'No Courses Yet!' ); ?></p>
 				<?php endif;?>

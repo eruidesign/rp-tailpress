@@ -35,6 +35,7 @@ if ( post_password_required() ) {
 <header class="product-header col-span-3">
 
 <?php woocommerce_template_single_title();?>
+<?php echo $product->get_type();?>
 <?php woocommerce_template_single_rating();?>
 <?php woocommerce_template_single_meta();?>
 
