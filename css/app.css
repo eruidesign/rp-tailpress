@@ -1026,6 +1026,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
+.bg-rppurple-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(140 98 172 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
 }
@@ -1960,6 +1965,11 @@ summary::-webkit-details-marker {
 .hover\:text-rppurple-500:hover {
   --tw-text-opacity: 1;
   color: rgb(140 98 172 / var(--tw-text-opacity));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 @media (min-width: 600px) {
