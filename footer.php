@@ -8,7 +8,7 @@
 <?php do_action( 'tailpress_content_after' ); ?>
 
 <div class="footer bg-rpgreen-900">
-	<div class="container">
+	<div class="container mx-auto">
 		<div class="flex flex-row">
 			<div class="basis-2/3 p-4">
 				<?php echo do_shortcode('[contact-form-7 id="338" title="Contact form"]');?>
