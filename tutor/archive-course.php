@@ -124,7 +124,7 @@ $curriculum_page = get_post($curriculum_ID);
 		<?php if($child_terms) : ?>
 			<?php foreach ($child_terms as $term) : ?>
 				
-				<h2 class="mb-4 text-4xl font-bold"><?php echo $term->name;?></h2>
+				<h2 class="my-4 text-4xl font-bold"><?php echo $term->name;?></h2>
 
 				<?php 
 					$args = array(  
@@ -181,7 +181,7 @@ $curriculum_page = get_post($curriculum_ID);
 					<?php else : ?>
 						<p><?php _e( 'No Courses Yet!' ); ?></p>
 					<?php endif;?>
-					
+
 				</div>
 			<?php endforeach;?>
 		<?php else : ?>
