@@ -123,10 +123,10 @@ $curriculum_page = get_post($curriculum_ID);
 
 		<?php if($child_terms) : ?>
 			<?php foreach ($child_terms as $term) : ?>
+				
 				<h2 class="mb-4 text-4xl font-bold"><?php echo $term->name;?></h2>
 
 				<?php 
-				
 					$args = array(  
 						'post_type' => 'courses',
 						'tax_query' => array(
@@ -138,64 +138,50 @@ $curriculum_page = get_post($curriculum_ID);
 						)
 
 					);
-
 					$courses = new WP_Query( $args ); 
 				?>
 
-		<?php 
-
-		$query_args = array(
-		'post_type' => 'product',
-		'tax_query' => array(
-			'relation' => 'OR',
-			array(
-				'taxonomy' => 'product_cat',
-				'field'    => 'slug',
-				'terms'    => $term->name,
-			),
-			array(
-				'taxonomy' => 'product_type',
-				'field'    => 'slug',
-				'terms'    => 'woosb', 
-			),
-			),
-		);
-		$products = new WP_Query($query_args);
-
-		?>
+				<?php 
+					$query_args = array(
+					'post_type' => 'product',
+					'tax_query' => array(
+						'relation' => 'OR',
+						array(
+							'taxonomy' => 'product_cat',
+							'field'    => 'slug',
+							'terms'    => $term->name,
+						),
+						array(
+							'taxonomy' => 'product_type',
+							'field'    => 'slug',
+							'terms'    => 'woosb', 
+						),
+						),
+					);
+					$products = new WP_Query($query_args);
+				?>
 				
 				<div class="tutor-course-list tutor-grid tutor-grid-4">
 					
-				<?php if ( $courses->have_posts() ) : while ( $courses->have_posts() ) : $courses->the_post(); ?>
-					<div class="tutor-card tutor-course-card">
-						<?php tutor_load_template( 'loop.course' );?>
-						<?php //the_title(); ?>
-						<?php //the_excerpt(); ?>
-					</div>
-				<?php endwhile;
-					wp_reset_postdata(); 
-				?>
-				<?php //if($products) : ?>
-						<?php //echo $products[0]->name;?>
-					<?php //endif;?>
-
-
-					<?php if ( $products->have_posts() ) : while ( $products->have_posts() ) : $products->the_post(); ?>
+					<?php if ( $courses->have_posts() ) : while ( $courses->have_posts() ) : $courses->the_post(); ?>
 						<div class="tutor-card tutor-course-card">
-							<?php wc_get_template_part( 'content', 'product-course' );?>
+							<?php tutor_load_template( 'loop.course' );?>
+							<?php //the_title(); ?>
+							<?php //the_excerpt(); ?>
 						</div>
-						<?php endwhile;
-							wp_reset_postdata(); 
-						?>
+						<?php endwhile; wp_reset_postdata(); ?>
+
+						<?php if ( $products->have_posts() ) : while ( $products->have_posts() ) : $products->the_post(); ?>
+							<div class="tutor-card tutor-course-card">
+								<?php wc_get_template_part( 'content', 'product-course' );?>
+							</div>
+							<?php endwhile; wp_reset_postdata(); ?>
 						<?php endif;?>
-					</div>
 
-
+					<?php else : ?>
+						<p><?php _e( 'No Courses Yet!' ); ?></p>
+					<?php endif;?>
 					
-				<?php else : ?>
-					<p><?php _e( 'No Courses Yet!' ); ?></p>
-				<?php endif;?>
-				<?php //tutor_course_loop_end();?>
 				</div>
 			<?php endforeach;?>
 		<?php else : ?>
