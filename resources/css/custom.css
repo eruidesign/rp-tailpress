@@ -149,7 +149,7 @@ p{
 /*** Contact Form ***/
 
 .wpcf7-form{
-  @apply grid grid-cols-2; 
+  @apply grid grid-cols-2 gap-x-1; 
 
   .wpcf7-form-control-wrap{
     @apply mb-4;
@@ -170,7 +170,14 @@ p{
   .wpcf7-submit{
     @apply bg-white px-4 py-2 text-lg text-rpgray-900 rounded border-solid border-2 border-rpgray-900;
   }
+
+  span[data-name="your-message"]{
+    @apply col-span-2;
+  }
 }
+
+
+
 /*.wpcf7{
     @apply bg-rpgreen-500;
 }
