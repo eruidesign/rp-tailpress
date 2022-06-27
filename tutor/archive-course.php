@@ -114,6 +114,7 @@ $curriculum_page = get_post($curriculum_ID);
 			//'exclude'	=> array(23,32), //Uncategorized, Art Courses
 			'parent'   => $current->term_id,
 			'hide_empty' => false,
+			'order' => 'DESC',
 		);
 		$child_terms = get_terms( $args );
 	?>
