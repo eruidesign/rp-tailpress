@@ -52,6 +52,7 @@ $curriculum_page = get_post($curriculum_ID);
 			//'exclude'	=> array(23,32), //Uncategorized, Art Courses
 			'parent'   => 0,
 			'hide_empty' => false,
+			'order' => 'DESC',
 		);
 		$courses_categories = get_terms( $args );
 	?>
@@ -67,7 +68,7 @@ $curriculum_page = get_post($curriculum_ID);
 			<div class="border overflow-hidden rounded-lg flex flex-col">
 				<div class="text-center flex-grow">
 						<div class="w-full aspect-[4/3] bg-gray-400">&nbsp;</div>
-						<h3 class="my-4 text-xl"><?php echo $cat->name;?></h3>
+						<h3 class="my-8 text-xl"><?php echo $cat->name;?></h3>
 					<div class="text-gray-400 p-4 text-sm text-justify"><?php echo apply_filters('the_content', $cat->description);?></div>
 				</div>
 				<div class="p-4 flex">
