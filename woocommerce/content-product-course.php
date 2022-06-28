@@ -25,6 +25,8 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 
+<?php $product = get_product(get_the_ID());?>
+
 <div class="overflow-hidden rounded-lg bg-rppurple-500 flex flex-col">
 	<div class="text-center flex-grow">
 		<?php the_post_thumbnail('woocommerce_thumbnail',array('class' => 'w-full'));?>
@@ -32,6 +34,6 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 		<div class="text-white p-4 text-sm text-justify"><?php the_excerpt();?></div>
 	</div>
 	<div class="p-4 flex">
-		<a href="<?php the_permalink();?>" class="grow border border-white text-white text-center rounded p-2 justify-self-end hover:bg-rppurple-900 hover:text-white">Buy this set<span> →</span></a>
+		<a href="<?php echo $product->add_to_cart_url();?>" class="grow border border-white text-white text-center rounded p-2 justify-self-end hover:bg-rppurple-900 hover:text-white">Add to cart<span> →</span></a>
 	</div>
 </div>
