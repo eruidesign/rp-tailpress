@@ -3,3 +3,11 @@
 @import "tailwindcss/utilities";
 
 @import "custom.css";
+
+@font-face {
+    font-family: 'ReenieBeanie';
+    src: url('./../fonts/ReenieBeanie.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

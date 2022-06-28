@@ -1,6 +1,7 @@
 const _ = require("lodash");
 const theme = require('./theme.json');
 const tailpress = require("@jeffreyvr/tailwindcss-tailpress");
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     content: [
@@ -42,6 +43,9 @@ module.exports = {
                 },
             },
             //colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
+            fontFamily: {
+                reenie: "ReenieBeanie",
+            },
             fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme)),
             gridTemplateColumns: {
                 // Simple 16 column grid

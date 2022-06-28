@@ -31,7 +31,7 @@
 <section class="<?php echo $section_2->post_name;?>">
     <div class="container mx-auto py-10 section-header">
         <h1 class="mb-5 text-5xl text-gray-700 uppercase font-bold"><?php echo $section_2->post_title;?></h1>
-        <div class="section-description text-gray-500"><?php echo apply_filters('the_content', $section_2->post_excerpt);?></div>
+        <div class="section-description text-gray-500 font-reenie text-4xl"><?php echo apply_filters('the_content', $section_2->post_excerpt);?></div>
     </div>
     <div class="md:min-h-[600px] relative overflow-hidden">
         <img src="<?php echo get_the_post_thumbnail_url($section_2_ID,'banner-1440x600');?>" class="h-[100%] w-auto max-w-fit">
@@ -67,7 +67,7 @@
 <section class="<?php echo $section_3->post_name;?>">
     <div class="container mx-auto section-header py-10">
         <h1 class="mb-5 text-5xl text-rpgreen-900 uppercase font-bold"><?php echo $section_3->post_title;?></h1>
-        <div class="section-description text-gray-500"><?php echo apply_filters('the_content', $section_3->post_excerpt);?></div>
+        <div class="section-description text-gray-500 font-reenie text-4xl"><?php echo apply_filters('the_content', $section_3->post_excerpt);?></div>
     </div>
 
     <div class="md:min-h-[600px] relative overflow-hidden">
@@ -90,7 +90,7 @@
 <section class="<?php echo $section_4->post_name;?>">
     <div class="section-header container mx-auto py-10">
         <h1 class="mb-5 text-5xl text-rppurple-900 uppercase font-bold"><?php echo $section_4->post_title;?></h1>
-        <div class="section-description text-gray-500"><?php echo apply_filters('the_content', $section_4->post_excerpt);?></div>
+        <div class="section-description text-gray-500 font-reenie text-4xl"><?php echo apply_filters('the_content', $section_4->post_excerpt);?></div>
     </div>
 
     <div class="md:min-h-[600px] relative overflow-hidden">
@@ -115,7 +115,7 @@
 <section class="<?php echo $section_5->post_name;?>">
     <div class="section-header container mx-auto py-10">
         <h1 class="mb-5 text-5xl text-gray-700 uppercase font-bold"><?php echo $section_5->post_title;?></h1>
-        <div class="section-description text-gray-500"><?php echo apply_filters('the_content', $section_5->post_excerpt);?></div>
+        <div class="section-description text-gray-500 font-reenie text-4xl"><?php echo apply_filters('the_content', $section_5->post_excerpt);?></div>
     </div>
     <div class="bg-gray-800 py-20">
         <div class="container mx-auto min-h-[600px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
