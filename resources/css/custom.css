@@ -91,6 +91,11 @@ p{
     @apply mb-4;
 }
 
+/*** Homepage ***/
+.home-tag{
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
 /*** Woocommerce Product -> more similar to Tutor ***/
 
 /* Product Tabs */
