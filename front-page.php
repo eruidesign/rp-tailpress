@@ -10,10 +10,10 @@
     $link_1_ID = 380; //Meet our team
     $link_1 = get_post($link_1_ID);
 
-    $section_3_ID = 300; //Coaching
+    $section_3_ID = 15; //Coaching
     $section_3 = get_post($section_3_ID);
     
-    $section_4_ID = 15; //Curriculum
+    $section_4_ID = 300; //Curriculum
     $section_4 = get_post($section_4_ID);
 
     $section_5_ID = 8; //Shop
@@ -106,7 +106,7 @@
             
             <div class="hero-content p-8 bg-rppurple-900 basis-[32rem] text-white order-1">
                 <?php echo apply_filters('the_content', $section_4->post_content);?>
-                <a href="<?php echo get_permalink($section_4_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-rppurple-500">Purchase WAM Curriculum<span> →</span></a>
+                <a href="<?php echo get_permalink($section_4_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-rppurple-500">See what we offer<span> →</span></a>
             </div>
         </div>
     </div>
