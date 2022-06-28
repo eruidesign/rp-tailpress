@@ -1,19 +1,28 @@
 <?php get_header(); ?>
 
-<?php
-	$page_ID = get_queried_object_id();
-	$page = get_post($page_ID);
-?>
+<?php if ( have_posts() ) : ?>
 
-<section class="hero min-h-[600px]" style="background-image: url(<?php echo get_the_post_thumbnail_url($page_ID,'banner-1440x600');?>);">
-    <div class="hero-overlay bg-opacity-60"></div>
-    <div class="hero-content text-center text-neutral-content">
-        <div class="max-w-md">
-        	<h1 class="mb-5 text-5xl font-bold"><?php echo $page->post_title;?></h1>
-       		<p class="mb-5"><?php echo $page->post_excerpt;?></p>
-        </div>
-    </div>
-</section>
+    <?php while ( have_posts() ) : the_post(); ?>
+
+    <?php $banner_url = get_the_post_thumbnail_url(get_the_ID(),'banner-1440x600');?>
+
+    <?php if($banner_url) : ?>
+        <section class="hero min-h-[600px]" style="background-image: url(<?php echo $banner_url;?>">
+    <?php else : ?>
+        <section class="hero min-h-[600px] bg-gradient-to-r from-gray-400" >
+    <?php endif;?>
+        <div class="hero-overlay bg-opacity-60"></div>
+            <div class="container mx-auto py-10 hero-content text-neutral-content">
+                <div class="max-w-md">
+                <h1 class="mb-5 text-5xl font-bold"><?php the_title();?></h1>
+                <p class="mb-5"><?php the_excerpt();?></p>
+                </div>
+            </div>
+        </section>
+    
+        <?php endwhile; ?>
+
+<?php endif; ?>
 
 <div class="container mx-auto my-8">
 
