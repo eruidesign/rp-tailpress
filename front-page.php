@@ -118,7 +118,7 @@
         <div class="section-description text-gray-500 font-reenie text-4xl"><?php echo apply_filters('the_content', $section_5->post_excerpt);?></div>
     </div>
     <div class="bg-gray-800 py-20">
-        <div class="container mx-auto min-h-[600px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <div class="container mx-auto min-h-[600px] grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
 
             <?php
                 $args = array(
@@ -145,7 +145,7 @@
                         <div class="text-gray-400"><?php echo $cat->description;?></div>
                     </div>
                     <div class="p-4 flex">
-                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">More<span> →</span></a>
+                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">See what we offer<span> →</span></a>
                     </div>
                     
                 </div>
