@@ -115,55 +115,6 @@ $shop_page = get_post($shop_page_ID);
 
 	</div>
 
-	<h2 class="text-xl font-bold uppercase mb-4">Featured Products</h2>
-
-	
-
-	<?php if ( woocommerce_product_loop() ) : ?>
-
-		<div class="products container mx-auto min-h-[600px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-			<?php
-				/*$args = array(
-					'post_type' => 'product',
-					'posts_per_page' => 12
-					);
-				$loop = new WP_Query( $args );
-				if ( $loop->have_posts() ) {
-					while ( $loop->have_posts() ) : $loop->the_post();
-						wc_get_template_part( 'content', 'product' );
-					endwhile;
-				} else {
-					echo __( 'No products found' );
-				}
-				wp_reset_postdata();*/
-
-				if ( wc_get_loop_prop( 'total' ) ) {
-					while ( have_posts() ) {
-						the_post();
-			
-						/**
-						 * Hook: woocommerce_shop_loop.
-						 */
-						//do_action( 'woocommerce_shop_loop' );
-			
-						wc_get_template_part( 'content', 'product' );
-					}
-				}
-			?>
-		</div>
-
-		<?php
-			do_action( 'woocommerce_after_shop_loop' );
-		?>
-
-	<?php else : ?>
-
-		<?php
-			do_action( 'woocommerce_no_products_found' );
-		?>
-
-	<?php endif;?>
-
 </div>
 
 <?php
