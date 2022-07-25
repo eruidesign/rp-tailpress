@@ -19,7 +19,7 @@
 
 	<header class="bg-white">
 
-		<div class="mx-auto container">
+		<div class="px-8">
 			<div class="lg:flex lg:justify-between lg:items-center">
 				<div class="flex justify-between items-center">
 					<div class="w-80 h-auto">
