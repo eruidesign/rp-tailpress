@@ -21,7 +21,7 @@
 ?>
 
 <section class="hero min-h-[600px] flex items-end" style="background-image: url(<?php echo get_the_post_thumbnail_url($section_1_ID,'banner-1440x600');?>);">
-    <div class="container mx-auto py-10 hero-content text-neutral-content flex flex-row">
+    <div class="container mx-auto py-10 hero-content text-neutral-content grid grid-cols-2 gap-4">
 
         <?php echo apply_filters('the_content', $section_1->post_content);?>
 
