@@ -17,7 +17,7 @@
 
 	<?php do_action( 'tailpress_header' ); ?>
 
-	<header class="bg-white">
+	<header class="lg:bg-white md:bg-rpgreen-900 sm:bg-rppurple-900">
 
 		<div class="px-8">
 			<div class="lg:flex lg:justify-between lg:items-center">
