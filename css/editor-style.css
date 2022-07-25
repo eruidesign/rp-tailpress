@@ -393,6 +393,10 @@
   flex-wrap: wrap
 }
 
+.place-items-center {
+  place-items: center
+}
+
 .items-end {
   align-items: flex-end
 }
