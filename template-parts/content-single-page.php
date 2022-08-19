@@ -13,7 +13,7 @@
             $pages = get_pages( array( 'child_of' => $postid, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
         ?>
         <?php if($pages) : ?>
-            <div class="grid grid-cols-5 gap-4 mb-8">
+            <div class="grid grid-cols-3 gap-4 mb-8">
                 <?php foreach ($pages as $page) : ?>
                     <?php $thumb_url = get_the_post_thumbnail_url($page->ID,'woocommerce_thumbnail');?>
 
@@ -28,7 +28,7 @@
                             <div class="text-gray-400 p-4 text-sm text-justify"><?php echo apply_filters('the_content', $page->post_content);?></div>
                         </div>
                         <div class="p-4 flex">
-                            <a href="<?php echo get_page_link( $page->ID ); ?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">More in <?php echo $page->post_title; ?><span> →</span></a>
+                            <a href="<?php echo get_page_link( $page->ID ); ?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">Contact for more info<span> →</span></a>
                         </div>
                     </div>
                 <?php endforeach;?>
