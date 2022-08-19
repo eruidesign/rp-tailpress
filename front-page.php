@@ -43,6 +43,11 @@
                             c-16.8,23.2-33.7,45-50.7,65.5H0c27.4-29.9,54.3-63,81.1-100c141.9-195.9,158.5-329.5,176.1-471C266.1,156.9,275.4,82.6,302.2,0z"
                             />
         </svg>
+
+        <div class="hero-content p-8 bg-rpgray-900 basis-[32rem] text-white">
+            <?php echo apply_filters('the_content', $section_2->post_content);?>
+            <a href="<?php echo get_permalink($section_2_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-rpgray-900">See what we offer<span> →</span></a>
+        </div>
         
         <!--<div class="section-container md:absolute inset-0 md:flex flex-row-reverse md:min-h-[600px]">
             <div class="p-8 order-3 shrink text-center">
