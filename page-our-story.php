@@ -44,6 +44,8 @@
     ?>
     
     <?php if ( $the_query->have_posts() ) : ?>
+
+        <h2>Mett Our Team</h2>
         
         <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
