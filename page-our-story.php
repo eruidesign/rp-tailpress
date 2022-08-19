@@ -57,7 +57,7 @@
                 <div class="bg-white border border-white shadow-lg  rounded-3xl p-4 m-4">
                     <div class="flex-none sm:flex">
                         <div class=" relative h-32 w-32   sm:mb-0 mb-3">
-                            <div  class="w-32 h-32 object-cover rounded-2xl bg-gray-500 text-white p-4"><?php the_title(); ?></div>
+                            <?php the_post_thumbnail();?>
                         </div>
                         
                         <div class="flex-auto sm:ml-5 justify-evenly">
