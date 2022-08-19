@@ -33,46 +33,22 @@
         <h1 class="mb-5 text-5xl text-gray-700 uppercase font-bold"><?php echo $section_2->post_title;?></h1>
         <div class="section-description text-gray-500 font-reenie text-5xl"><?php echo apply_filters('the_content', $section_2->post_excerpt);?></div>
     </div>
-    <div class="section-container md:grid md:grid-cols-2 place-items-center p-8 md:min-h-[600px] relative overflow-hidden" style="background-image: url(<?php echo get_the_post_thumbnail_url($section_2_ID,'banner-1440x600');?>);">
-        <!--<img src="<?php echo get_the_post_thumbnail_url($section_2_ID,'banner-1440x600');?>" class="h-[100%] w-auto max-w-fit">-->
-        
-        <svg id="shape1" viewBox="0 0 1365.6 799.9" class="hidden md:block order-2 min-w-[267px] absolute h-[100%] bottom-0 -right-[10rem] z-0">
-            <path class="cls-1 fill-rpgray-900" d="M1365.6,0v799.9H73.2c13.8-17.1,27.4-35,41-53.8c153.7-212.3,172.4-362.3,190.5-507.4
-                            c9.8-78.9,19.1-153.6,50.1-238.7H1365.6z"/>
-            <path class="cls-2 fill-rpgray-900" d="M302.2,0h31.4c-29.8,84.4-39,158.3-48.7,236.3c-17.7,142.6-36.1,290-186.8,498.1
-                            c-16.8,23.2-33.7,45-50.7,65.5H0c27.4-29.9,54.3-63,81.1-100c141.9-195.9,158.5-329.5,176.1-471C266.1,156.9,275.4,82.6,302.2,0z"
-                            />
-        </svg>
-
-        <div class="hero-content p-8 bg-rpgray-900 basis-[32rem] text-white">
-            <?php echo apply_filters('the_content', $section_2->post_content);?>
-            <a href="<?php echo get_permalink($section_2_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-rpgray-900">See what we offer<span> →</span></a>
-        </div>
-        
-        <!--<div class="section-container md:absolute inset-0 md:flex flex-row-reverse md:min-h-[600px]">
-            <div class="p-8 order-3 shrink text-center">
-                Walking through the forest<br>
-                Comforted by the shade<br>
-                Sunshine breaks through<br>
-                Beauty beheld<br>
-
-                So the ARTIST…<br>
-                In the darkness<br>
-                Imagination takes flight<br>
-                Rhythms woven together<br>
-                Form new stories.<br>
-            </div>-->
+    <div class="md:min-h-[600px] relative overflow-hidden">
+        <img src="<?php echo get_the_post_thumbnail_url($section_2_ID,'banner-1440x600');?>" class="h-[100%] w-auto max-w-fit">
+        <div class="section-container md:absolute inset-0 z-50 md:flex flex-row-reverse md:min-h-[600px]">
             
-                <!--<svg id="shape1" viewBox="0 0 354.8 799.9" class="hidden md:block order-2 min-w-[267px]">
-                    <path class="cls-1 fill-rpgray-900" d="M304.7,238.7c-18.1,145.1-36.7,295.1-190.5,507.4c-13.6,18.8-27.3,36.7-41,53.8h281.6V0
-                    C323.8,85.1,314.5,159.8,304.7,238.7z"/>
-                    <path class="cls-2 fill-rpgray-900" d="M284.8,236.3c9.7-78,18.9-151.9,48.7-236.3h-31.4c-26.8,82.6-36,156.9-45,229c-17.6,141.5-34.2,275-176.1,470.9
-                    c-26.8,37-53.6,70.1-81.1,100h47.3c17-20.5,33.9-42.3,50.7-65.5C248.7,526.2,267.1,378.8,284.8,236.3z"/>
-                </svg>-->
-
+            <svg id="shape1" viewBox="0 0 354.8 799.9" class="hidden md:block order-2 min-w-[267px]">
+                <path class="cls-1 fill-rpgray-900" d="M304.7,238.7c-18.1,145.1-36.7,295.1-190.5,507.4c-13.6,18.8-27.3,36.7-41,53.8h281.6V0
+                C323.8,85.1,314.5,159.8,304.7,238.7z"/>
+                <path class="cls-2 fill-rpgray-900" d="M284.8,236.3c9.7-78,18.9-151.9,48.7-236.3h-31.4c-26.8,82.6-36,156.9-45,229c-17.6,141.5-34.2,275-176.1,470.9
+                c-26.8,37-53.6,70.1-81.1,100h47.3c17-20.5,33.9-42.3,50.7-65.5C248.7,526.2,267.1,378.8,284.8,236.3z"/>
+            </svg>
+            
+            <div class="hero-content p-8 bg-rpgray-900 basis-[32rem] text-white order-1">
                 <?php echo apply_filters('the_content', $section_2->post_content);?>
-                <!--<a href="<?php echo get_permalink($link_1_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-gray-500 col-end-3 z-50"><?php echo $link_1->post_title;?><span> →</span></a>-->
-        <!--</div>-->
+                <a href="<?php echo get_permalink($section_2_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-rpgray-500">Our Story<span> →</span></a>
+            </div>
+        </div>
     </div>
 </section>
 
