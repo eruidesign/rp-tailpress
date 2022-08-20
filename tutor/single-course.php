@@ -102,6 +102,22 @@ do_action('tutor_course/single/before/wrap');
 <?php while ( $products->have_posts() ) : ?>
 		<?php $products->the_post(); ?>
 		<?php $products->wc_get_template_part( 'content', 'single-product' ); ?>
+
+
+        <?php woocommerce_template_single_title();?>
+<?php //echo $product->get_type();?>
+<?php woocommerce_template_single_rating();?>
+<?php woocommerce_template_single_meta();?>
+
+<?php
+do_action( 'woocommerce_before_single_product_summary' );
+do_action( 'woocommerce_single_product_summary' );
+do_action( 'woocommerce_after_single_product_summary' );
+
+
+?>
+
+
 	<?php endwhile; // end of the loop. ?>
 
 <?php endif;?>
