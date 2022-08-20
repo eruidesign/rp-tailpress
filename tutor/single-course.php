@@ -85,20 +85,12 @@ global $post;
     $has_product_id = get_post_meta( $post_id, '_tutor_course_product_id', true );
     $product_id = get_post_meta( $post_id, '_tutor_course_product_id' );
 
-    if( $has_product_id ){
-        $product = wc_get_product( $product_id[0] );
-        $short_description = $product->get_short_description();
-        $permalink = get_permalink( $product->get_id() );
-        $price = $product->get_price();
-        $image_url = get_the_post_thumbnail_url( $product_id[0] );
-        $name = $product->get_name();
-
-        echo 'Linked Product: '.$name;
-        echo 'Description: '.$short_description;
-    }
-
-
 ?>
+
+<?php if( $has_product_id ) : ?>
+    <?php $product = wc_get_product( $product_id[0] );?>
+    <pre><?php print_r($product);?></pre>
+<?php endif;?>
 
 <?php do_action('tutor_course/single/after/wrap'); ?>
 
