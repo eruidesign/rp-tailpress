@@ -99,7 +99,8 @@ do_action('tutor_course/single/before/wrap');
 
 
 
-                        wc_get_template_part( 'content', 'single-product' );
+                        //wc_get_template_part( 'content', 'single-product' );
+                        do_action( 'woocommerce_single_product_summary' );
 
                     }
                     wp_reset_postdata();
