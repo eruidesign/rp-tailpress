@@ -24,6 +24,8 @@ get_header( 'shop' );
 ?>
 
 <div class="container my-8 mx-auto">
+
+    <h1>taxonomy-product-cat.php</h1>
 	
 	<?php
 		if ( function_exists('yoast_breadcrumb') ) {
