@@ -78,7 +78,11 @@ do_action('tutor_course/single/before/wrap');
 </div><!-- /.container -->
 <?php
 
-    $post_id = get_the_ID(); 
+    //$post_id = get_the_ID(); 
+
+    global $post; 
+
+    $post_id = $post->ID; 
 
     $has_product_id = get_post_meta( $post_id, '_tutor_course_product_id', true );
     $product_id = get_post_meta( $post_id, '_tutor_course_product_id' );
