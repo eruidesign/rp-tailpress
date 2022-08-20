@@ -91,6 +91,8 @@ do_action('tutor_course/single/before/wrap');
 ?>
 
 <?php if( $has_product_id ) : ?>
+
+<div class="woocommerce my-products-loop">
  <?php
     $args = array(
     'post_type'           => 'product',
@@ -102,11 +104,15 @@ $product = new WP_Query( $args );
 while ( $product->have_posts() ) {
     $product->the_post();
 
+
+
     wc_get_template_part( 'content', 'single-product' );
 
 }
 wp_reset_postdata();
 ?>
+
+</div>
 
 <?php endif;?>
 
