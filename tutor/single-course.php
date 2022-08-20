@@ -85,40 +85,28 @@ do_action('tutor_course/single/before/wrap');
     $post_id = $post->ID; 
 
     $has_product_id = get_post_meta( $post_id, '_tutor_course_product_id', true );
-    $product_id = get_post_meta( $post_id, '_tutor_course_product_id' );
+    $product_id_array = get_post_meta( $post_id, '_tutor_course_product_id' );
+    $product_id = $product_id_array[0];
 
 ?>
 
 <?php if( $has_product_id ) : ?>
-    <?php //$products = wc_get_product( $product_id[0] );?>
-    <pre><?php //print_r($products);?></pre>
-<?php
-    $query = new WC_Product_Query( array(
-    'p' => $product_id,
-) );
+ <?php
+    $args = array(
+    'post_type'           => 'product',
+    'p'         => $product_id,
+);
+
+$product = new WP_Query( $args );
+
+while ( $product->have_posts() ) {
+    $product->the_post();
+
+    wc_get_template_part( 'content', 'product' );
+
+}
+wp_reset_postdata();
 ?>
-<?php $products = $query->get_products();?>
-<pre><?php print_r($products);?></pre>
-<?php while ( $products->have_posts() ) : ?>
-		<?php $products->the_post(); ?>
-		<?php $products->wc_get_template_part( 'content', 'single-product' ); ?>
-
-
-        <?php woocommerce_template_single_title();?>
-<?php //echo $product->get_type();?>
-<?php woocommerce_template_single_rating();?>
-<?php woocommerce_template_single_meta();?>
-
-<?php
-do_action( 'woocommerce_before_single_product_summary' );
-do_action( 'woocommerce_single_product_summary' );
-do_action( 'woocommerce_after_single_product_summary' );
-
-
-?>
-
-
-	<?php endwhile; // end of the loop. ?>
 
 <?php endif;?>
 
