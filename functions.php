@@ -182,3 +182,63 @@ function create_posttype() {
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_posttype' );
+
+//Pull Product Data on Course
+add_filter( 'the_content', 'codemode__show_linked_product' ); 
+function codemode__show_linked_product( $content ){
+
+    global $post; 
+
+    $post_id = $post->ID; 
+
+    $data = "";
+
+    if( is_single( $post ) ){
+        if( get_post_type( $post ) == 'courses' ){
+            // get the linked product here
+            $has_product_id = get_post_meta( $post_id, '_tutor_course_product_id', true );
+            $product_id = get_post_meta( $post_id, '_tutor_course_product_id' );
+
+            if( $has_product_id ){
+                $product = wc_get_product( $product_id[0] );
+                $short_description = $product->get_short_description();
+                $permalink = get_permalink( $product->get_id() );
+                $price = $product->get_price();
+                $image_url = get_the_post_thumbnail_url( $product_id[0] );
+                $name = $product->get_name();
+
+                $data = "
+                <style>
+                    .flex-horiz{
+                        display: flex;           /* establish flex sys-container */
+                        flex-direction: column;  /* make main axis vertical */
+                        align-items: center;     /* center items horizontally, in this case */
+                    }
+
+                    .product-item{
+                        padding: 7px 5px;
+                        text-align: center;
+                    }
+
+                    .codemode-linked-product{
+                        padding: 15px;
+                    }
+                </style>
+
+                <div class='codemode-linked-product flex-horiz'>
+                    <center><h4>The Linked Product</h4></center>
+                    <div style='max-width: 300px; height: auto; border: 1px solid #E1E1E1; pading: 10px; border-radius: 5px;'>
+                        <center><img src='$image_url' style='max-height: 250px;' /></center>
+                        <div class='product-item product-name'>$name</div>
+                        <div class='product-item product-price'>Price: $price</div>
+                        <div class='product-item product-short-descriptioin'>$short_description</div>
+                        <div class='product-item product-permalink'><center><a href='$permalink' class='gradiant gradiant-hover btn'>View</a></center></div>
+                    </dikv>
+                </div>";
+            }
+        }
+    }
+
+
+    return $content.$data; 
+}
