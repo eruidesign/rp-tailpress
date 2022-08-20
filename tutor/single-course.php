@@ -86,8 +86,18 @@ do_action('tutor_course/single/before/wrap');
 ?>
 
 <?php if( $has_product_id ) : ?>
-    <?php $products = wc_get_product( $product_id[0] );?>
-    <pre><?php print_r($products);?></pre>
+    <?php //$products = wc_get_product( $product_id[0] );?>
+    <pre><?php //print_r($products);?></pre>
+<?php
+    $query = new WC_Product_Query( array(
+    'p' => $product_id,
+) );
+?>
+<?php $products = $query->get_products();?>
+<?php while ( $products->have_posts() ) : ?>
+		<?php $products->the_post(); ?>
+		<?php wc_get_template_part( 'content', 'single-product' ); ?>
+	<?php endwhile; // end of the loop. ?>
 
 <?php endif;?>
 
