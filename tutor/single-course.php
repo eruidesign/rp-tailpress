@@ -98,6 +98,7 @@ do_action('tutor_course/single/before/wrap');
 ) );
 ?>
 <?php $products = $query->get_products();?>
+<pre><?php print_r($products);?></pre>
 <?php while ( $products->have_posts() ) : ?>
 		<?php $products->the_post(); ?>
 		<?php wc_get_template_part( 'content', 'single-product' ); ?>
