@@ -102,7 +102,7 @@ $product = new WP_Query( $args );
 while ( $product->have_posts() ) {
     $product->the_post();
 
-    wc_get_template_part( 'content', 'product' );
+    wc_get_template_part( 'content', 'single-product' );
 
 }
 wp_reset_postdata();
