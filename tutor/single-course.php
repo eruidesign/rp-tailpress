@@ -69,6 +69,44 @@ do_action('tutor_course/single/before/wrap');
                     <?php tutor_course_tags_html(); ?>
                     <?php tutor_course_target_audience_html(); ?>
                     <?php do_action('tutor_course/single/after/sidebar'); ?>
+
+
+                    <?php
+
+                        global $post; 
+
+                        $post_id = $post->ID; 
+
+                        $has_product_id = get_post_meta( $post_id, '_tutor_course_product_id', true );
+                        $product_id_array = get_post_meta( $post_id, '_tutor_course_product_id' );
+                        $product_id = $product_id_array[0];
+
+                    ?>
+
+                    <?php if( $has_product_id ) : ?>
+
+                    <div class="woocommerce my-products-loop">
+                    <?php
+                        $args = array(
+                        'post_type'           => 'product',
+                        'p'         => $product_id,
+                    );
+
+                    $product = new WP_Query( $args );
+
+                    while ( $product->have_posts() ) {
+                        $product->the_post();
+
+
+
+                        wc_get_template_part( 'content', 'single-product' );
+
+                    }
+                    wp_reset_postdata();
+                    ?>
+
+                    </div>
+
                 </div>
             </aside>
         </div>
@@ -76,43 +114,6 @@ do_action('tutor_course/single/before/wrap');
 </div>
 
 </div><!-- /.container -->
-<?php
-
-    //$post_id = get_the_ID(); 
-
-    global $post; 
-
-    $post_id = $post->ID; 
-
-    $has_product_id = get_post_meta( $post_id, '_tutor_course_product_id', true );
-    $product_id_array = get_post_meta( $post_id, '_tutor_course_product_id' );
-    $product_id = $product_id_array[0];
-
-?>
-
-<?php if( $has_product_id ) : ?>
-
-<div class="woocommerce my-products-loop">
- <?php
-    $args = array(
-    'post_type'           => 'product',
-    'p'         => $product_id,
-);
-
-$product = new WP_Query( $args );
-
-while ( $product->have_posts() ) {
-    $product->the_post();
-
-
-
-    wc_get_template_part( 'content', 'single-product' );
-
-}
-wp_reset_postdata();
-?>
-
-</div>
 
 <?php endif;?>
 
