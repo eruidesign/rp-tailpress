@@ -90,9 +90,8 @@ do_action('tutor_course/single/before/wrap');
     <pre><?php //print_r($product);?></pre>
     <?php $args = array(
         'p'         => $product_id, // ID of a page, post, or custom type
-        'post_type' => 'any'
         );
-        $products = new WP_Query($args);
+        $products = new WC_Product_Query($args);
 
         ?>
 
