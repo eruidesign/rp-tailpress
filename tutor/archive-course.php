@@ -22,7 +22,7 @@ $curriculum_page = get_post($curriculum_ID);
 
 <?php if ( is_post_type_archive() ) : ?>
 
-<section class="hero min-h-[100px]" style="background-image: url(<?php echo get_the_post_thumbnail_url($curriculum_ID,'banner-1440x600');?>);">
+<section class="hero min-h-[600px]" style="background-image: url(<?php echo get_the_post_thumbnail_url($curriculum_ID,'banner-1440x600');?>);">
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="container mx-auto py-10 hero-content text-neutral-content">
         <div class="max-w-md">
