@@ -157,7 +157,7 @@ function yoast_seo_breadcrumb_append_link( $links ) {
 //remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 //remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 //remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
 add_post_type_support( 'page', 'excerpt' );
 
