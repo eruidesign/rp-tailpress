@@ -1022,6 +1022,10 @@ body {
     position: absolute
   }
 
+  .md\:m-0 {
+    margin: 0px
+  }
+
   .md\:my-6 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem

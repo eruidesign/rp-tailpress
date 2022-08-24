@@ -47,11 +47,11 @@ article > *:not(.entry-content),
     padding: 1rem;
     margin-left: -1rem;
 }
-.menu-item-has-children:hover .sub-menu{
-    @apply md:block:;
+.has-submenu:hover .sub-menu{
+    @apply md:block:visible;
 }
 .sub-menu li{
-    margin: 0 !important;
+    @apply md:m-0 ml-8;
 }
 
 .woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
