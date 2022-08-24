@@ -17,7 +17,7 @@
 					c-26.8,37-53.6,70.1-81.1,100h47.3c17-20.5,33.9-42.3,50.7-65.5C248.7,526.2,267.1,378.8,284.8,236.3z"/>
 				</svg>
 				
-				<div class="hero-content p-8 bg-rpgray-900 basis-[32rem] text-white order-1">
+				<div class="hero-content p-8 bg-rpgray-900 basis-[32rem] text-white order-1 flex items-center">
 					<div class="max-w-md">
 						<h1 class="mb-5 text-5xl font-bold"><?php the_title();?></h1>
 						<p class="mb-5"><?php the_excerpt();?></p>

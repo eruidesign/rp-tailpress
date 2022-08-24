@@ -44,7 +44,7 @@
                 c-26.8,37-53.6,70.1-81.1,100h47.3c17-20.5,33.9-42.3,50.7-65.5C248.7,526.2,267.1,378.8,284.8,236.3z"/>
             </svg>
             
-            <div class="hero-content p-8 bg-rpgray-900 basis-[32rem] text-white order-1">
+            <div class="hero-content p-8 bg-rpgray-900 basis-[32rem] text-white order-1 flex items-center">
                 <?php echo apply_filters('the_content', $section_2->post_content);?>
                 <a href="<?php echo get_permalink($section_2_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-rpgray-500">Our Story<span> →</span></a>
             </div>
@@ -62,7 +62,7 @@
         <img src="<?php echo get_the_post_thumbnail_url($section_3_ID,'banner-1440x600');?>" class="h-[100%] w-auto max-w-fit absolute right-0">
         <div class="section-container md:absolute inset-0 z-50 md:flex md:min-h-[600px]">
         
-            <div class="hero-content p-8 bg-rpgreen-900 basis-[32rem] text-white order-1">
+            <div class="hero-content p-8 bg-rpgreen-900 basis-[32rem] text-white order-1 flex items-center">
                 <?php echo apply_filters('the_content', $section_3->post_content);?>
                 <a href="<?php echo get_permalink($section_3_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-gray-500">See what we offer<span> →</span></a>
             </div>
@@ -92,7 +92,7 @@
                 c-26.8,37-53.6,70.1-81.1,100h47.3c17-20.5,33.9-42.3,50.7-65.5C248.7,526.2,267.1,378.8,284.8,236.3z"/>
             </svg>
             
-            <div class="hero-content p-8 bg-rppurple-900 basis-[32rem] text-white order-1">
+            <div class="hero-content p-8 bg-rppurple-900 basis-[32rem] text-white order-1  flex items-center">
                 <?php echo apply_filters('the_content', $section_4->post_content);?>
                 <a href="<?php echo get_permalink($section_4_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-rppurple-500">See what we offer<span> →</span></a>
             </div>

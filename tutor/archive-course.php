@@ -26,7 +26,7 @@ $curriculum_page = get_post($curriculum_ID);
 	<img src="<?php echo get_the_post_thumbnail_url($curriculum_ID,'banner-1440x600');?>" class="h-[100%] w-auto max-w-fit absolute right-0">
 	<div class="section-container md:absolute inset-0 z-50 md:flex md:min-h-[600px]">
 	
-		<div class="hero-content p-8 bg-rpgreen-900 basis-[32rem] text-white order-1">
+		<div class="hero-content p-8 bg-rpgreen-900 basis-[32rem] text-white order-1 flex items-center">
 			<div class="max-w-md">
 				<h1 class="mb-5 text-5xl font-bold"><?php echo $curriculum_page->post_title;?></h1>
 				<p class="mb-5"><?php echo $curriculum_page->post_excerpt;?></p>
