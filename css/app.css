@@ -1451,16 +1451,26 @@ article > *:not(.entry-content), .entry-content > * {
       list-style-type: decimal;
     }
 
+@media (min-width: 782px) {
+  .sub-menu {
+    visibility: hidden;
+  }
+
+  .sub-menu {
+    position: absolute;
+  }
+}
+
 .sub-menu{
-  display: none;
-  position: absolute;
   background: #fff;
   padding: 1rem;
   margin-left: -1rem;
 }
 
-.menu-item-has-children:hover .sub-menu{
-  display: block;
+@media (min-width: 782px) {
+  .menu-item-has-children:hover .sub-menu {
+    display: block;
+  }
 }
 
 .sub-menu li{
@@ -1762,11 +1772,10 @@ p {
   position: absolute;
 }
 
-.sub-menu a {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  display: block;
-}
+/*.sub-menu a{
+    @apply py-2;
+    display: block;
+  }*/
 
 $blu: #69A4FC;
 
@@ -1979,6 +1988,13 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+/* Homepage */
+
+.hero-content ul{
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
 @font-face {
   font-family: 'ReenieBeanie';
 
@@ -2055,6 +2071,10 @@ summary::-webkit-details-marker {
 }
 
 @media (min-width: 782px) {
+  .md\:invisible {
+    visibility: hidden;
+  }
+
   .md\:absolute {
     position: absolute;
   }

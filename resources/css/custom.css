@@ -42,14 +42,13 @@ article > *:not(.entry-content),
 }
 
 .sub-menu{
-    display: none;
-    position: absolute;
+  @apply md:invisible:absolute;
     background: #fff;
     padding: 1rem;
     margin-left: -1rem;
 }
 .menu-item-has-children:hover .sub-menu{
-    display: block;
+    @apply md:block:;
 }
 .sub-menu li{
     margin: 0 !important;
@@ -267,10 +266,10 @@ p{
     position: absolute;
   }
 
-  .sub-menu a{
+  /*.sub-menu a{
     @apply py-2;
     display: block;
-  }
+  }*/
 
   $blu: #69A4FC;
 
@@ -448,4 +447,12 @@ summary::-webkit-details-marker {
 
 .modal[aria-hidden='true'] {
   display: none;
+}
+
+
+/* Homepage */
+
+.hero-content ul{
+  list-style-type: disc;
+  list-style-position: inside;
 }
