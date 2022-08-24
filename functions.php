@@ -154,9 +154,9 @@ function yoast_seo_breadcrumb_append_link( $links ) {
     return $links;
 }*/
 
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 
 
 add_post_type_support( 'page', 'excerpt' );

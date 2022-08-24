@@ -38,14 +38,6 @@
   }
 }
 
-.visible {
-  visibility: visible
-}
-
-.invisible {
-  visibility: hidden
-}
-
 .absolute {
   position: absolute
 }
@@ -253,10 +245,6 @@
 
 .min-h-\[600px\] {
   min-height: 600px
-}
-
-.min-h-\[100px\] {
-  min-height: 100px
 }
 
 .w-full {
@@ -661,6 +649,11 @@
   padding-bottom: 5rem
 }
 
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem
@@ -669,11 +662,6 @@
 .py-12 {
   padding-top: 3rem;
   padding-bottom: 3rem
-}
-
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem
 }
 
 .py-3 {

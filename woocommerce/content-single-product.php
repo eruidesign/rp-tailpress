@@ -34,10 +34,10 @@ if ( post_password_required() ) {
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'grid grid-cols-3 gap-8 align-items-start', $product ); ?>>
 <header class="product-header col-span-3">
 
-<?php woocommerce_template_single_title();?>
-<?php echo $product->get_type();?>
-<?php woocommerce_template_single_rating();?>
-<?php woocommerce_template_single_meta();?>
+<?php //woocommerce_template_single_title();?>
+<?php //echo $product->get_type();?>
+<?php //woocommerce_template_single_rating();?>
+<?php //woocommerce_template_single_meta();?>
 
 </header>
 
