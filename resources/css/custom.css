@@ -42,13 +42,13 @@ article > *:not(.entry-content),
 }
 
 .sub-menu{
-  @apply md:invisible:absolute;
+  @apply md:invisible md:absolute;
     background: #fff;
     padding: 1rem;
     margin-left: -1rem;
 }
 .has-submenu:hover .sub-menu{
-    @apply md:block:visible;
+    @apply md:block md:visible;
 }
 .sub-menu li{
     @apply md:m-0 ml-8;

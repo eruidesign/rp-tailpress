@@ -1468,13 +1468,23 @@ article > *:not(.entry-content), .entry-content > * {
 }
 
 @media (min-width: 782px) {
-  .menu-item-has-children:hover .sub-menu {
+  .has-submenu:hover .sub-menu {
+    visibility: visible;
+  }
+
+  .has-submenu:hover .sub-menu {
     display: block;
   }
 }
 
-.sub-menu li{
-  margin: 0 !important;
+.sub-menu li {
+  margin-left: 2rem;
+}
+
+@media (min-width: 782px) {
+  .sub-menu li {
+    margin: 0px;
+  }
 }
 
 .woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
@@ -2077,6 +2087,10 @@ summary::-webkit-details-marker {
 
   .md\:absolute {
     position: absolute;
+  }
+
+  .md\:m-0 {
+    margin: 0px;
   }
 
   .md\:my-6 {
