@@ -508,10 +508,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-.visible {
-  visibility: visible;
-}
-
 .absolute {
   position: absolute;
 }
@@ -1456,21 +1452,11 @@ article > *:not(.entry-content), .entry-content > * {
     }
 
 .sub-menu{
+  display: none;
+  position: absolute;
   background: #fff;
   padding: 1rem;
   margin-left: -1rem;
-  visibility: visible;
-  position: relative;
-}
-
-@media (min-width: 782px) {
-  .sub-menu {
-    visibility: hidden;
-  }
-
-  .sub-menu {
-    position: absolute;
-  }
 }
 
 .menu-item-has-children:hover .sub-menu{
@@ -2069,10 +2055,6 @@ summary::-webkit-details-marker {
 }
 
 @media (min-width: 782px) {
-  .md\:invisible {
-    visibility: hidden;
-  }
-
   .md\:absolute {
     position: absolute;
   }

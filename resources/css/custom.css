@@ -42,12 +42,12 @@ article > *:not(.entry-content),
 }
 
 .sub-menu{
+    display: none;
+    position: absolute;
     background: #fff;
     padding: 1rem;
     margin-left: -1rem;
-    @apply visible md:invisible md:absolute relative;
 }
-
 .menu-item-has-children:hover .sub-menu{
     display: block;
 }
