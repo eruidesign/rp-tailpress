@@ -47,6 +47,8 @@ article > *:not(.entry-content),
     padding: 1rem;
     margin-left: -1rem;
 }
+
+.pll-parent-menu-item:hover .sub-menu,
 .has-submenu:hover .sub-menu{
     @apply md:block md:visible;
 }
@@ -251,9 +253,11 @@ p{
   
   }*/
 
+  .pll-parent-menu-item > a,
   .has-submenu > a{
     position: relative;
   }
+  .pll-parent-menu-item > a::after,
   .has-submenu > a::after{
     content: "▼";
    /* border-width: 0 3px 3px 0;
