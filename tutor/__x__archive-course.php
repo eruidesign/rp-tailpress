@@ -22,22 +22,14 @@ $curriculum_page = get_post($curriculum_ID);
 
 <?php if ( is_post_type_archive() ) : ?>
 
-<section class="md:min-h-[600px] relative overflow-hidden">
-	<img src="<?php echo get_the_post_thumbnail_url($curriculum_ID,'banner-1440x600');?>" class="h-[100%] w-auto max-w-fit absolute right-0">
-	<div class="section-container md:absolute inset-0 z-50 md:flex md:min-h-[600px]">
-	
-		<div class="hero-content p-8 bg-rpgreen-900 basis-[32rem] text-white order-1">
-			<div class="max-w-md">
-				<h1 class="mb-5 text-5xl font-bold"><?php echo $curriculum_page->post_title;?></h1>
-				<p class="mb-5"><?php echo $curriculum_page->post_excerpt;?></p>
-			</div>
-		</div>
-		<svg id="shape2" viewBox="0 0 354.8 799.9" class="hidden md:block order-2 min-w-[267px] ml-[-1px]">
-			<path class="st0 fill-rpgreen-900" d="M0,0l0,799.9h281.6c-13.7-17-27.4-35-41-53.8C86.9,533.8,68.2,383.8,50.1,238.7C40.3,159.8,31,85.1,0,0z"/>
-			<path class="st1 fill-rpgreen-900 opacity-3" d="M256.8,734.4c16.8,23.2,33.7,45,50.7,65.5h47.3c-28.9-31.7-56-65-81.1-99.9C131.8,504,115.2,370.5,97.6,229
-c-9-72.1-18.2-146.4-45-229L21.2,0C51,84.4,60.3,158.3,70,236.3C87.7,378.8,106.1,526.2,256.8,734.4z"/>
-		</svg>
-	</div>
+<section class="hero min-h-[600px]" style="background-image: url(<?php echo get_the_post_thumbnail_url($curriculum_ID,'banner-1440x600');?>);">
+    <div class="hero-overlay bg-opacity-60"></div>
+    <div class="container mx-auto py-10 hero-content text-neutral-content">
+        <div class="max-w-md">
+        	<h1 class="mb-5 text-5xl font-bold"><?php echo $curriculum_page->post_title;?></h1>
+       		<p class="mb-5"><?php echo $curriculum_page->post_excerpt;?></p>
+        </div>
+    </div>
 </section>
 
 <div class="container mx-auto">
