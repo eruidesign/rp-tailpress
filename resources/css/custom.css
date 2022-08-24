@@ -46,6 +46,7 @@ article > *:not(.entry-content),
     background: #fff;
     padding: 1rem;
     margin-left: -1rem;
+    z-index: 100;
 }
 
 .pll-parent-menu-item:hover .sub-menu,

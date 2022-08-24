@@ -45,8 +45,11 @@
             </svg>
             
             <div class="hero-content p-8 bg-rpgray-900 basis-[32rem] text-white order-1 flex items-center">
-                <?php echo apply_filters('the_content', $section_2->post_content);?>
-                <a href="<?php echo get_permalink($section_2_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-rpgray-500">Our Story<span> →</span></a>
+                <div class="max-w-md">
+                    <?php echo apply_filters('the_content', $section_2->post_content);?>
+                    <a href="<?php echo get_permalink($section_2_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-rpgray-500">Our Story<span> →</span></a>
+            
+                </div>
             </div>
         </div>
     </div>
@@ -63,8 +66,11 @@
         <div class="section-container md:absolute inset-0 z-50 md:flex md:min-h-[600px]">
         
             <div class="hero-content p-8 bg-rpgreen-900 basis-[32rem] text-white order-1 flex items-center">
-                <?php echo apply_filters('the_content', $section_3->post_content);?>
-                <a href="<?php echo get_permalink($section_3_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-gray-500">See what we offer<span> →</span></a>
+                <div class="max-w-md">
+                    <?php echo apply_filters('the_content', $section_3->post_content);?>
+                    <a href="<?php echo get_permalink($section_3_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-gray-500">See what we offer<span> →</span></a>
+            
+                </div>
             </div>
             <svg id="shape2" viewBox="0 0 354.8 799.9" class="hidden md:block order-2 min-w-[267px] ml-[-1px]">
                 <path class="st0 fill-rpgreen-900" d="M0,0l0,799.9h281.6c-13.7-17-27.4-35-41-53.8C86.9,533.8,68.2,383.8,50.1,238.7C40.3,159.8,31,85.1,0,0z"/>
@@ -93,8 +99,10 @@
             </svg>
             
             <div class="hero-content p-8 bg-rppurple-900 basis-[32rem] text-white order-1  flex items-center">
-                <?php echo apply_filters('the_content', $section_4->post_content);?>
-                <a href="<?php echo get_permalink($section_4_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-rppurple-500">See what we offer<span> →</span></a>
+                <div class="max-w-md">
+                    <?php echo apply_filters('the_content', $section_4->post_content);?>
+                    <a href="<?php echo get_permalink($section_4_ID);?>" class="btn btn-primary bg-white text-black p-2 px-8 rounded hover:bg-rppurple-500">See what we offer<span> →</span></a>
+                </div>
             </div>
         </div>
     </div>
