@@ -255,6 +255,10 @@
   min-height: 600px
 }
 
+.min-h-\[100px\] {
+  min-height: 100px
+}
+
 .w-full {
   width: 100%
 }
