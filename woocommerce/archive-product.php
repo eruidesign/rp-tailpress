@@ -85,7 +85,7 @@ $shop_page = get_post($shop_page_ID);
 		<?php
 			$args = array(
 				'taxonomy'	=> 'product_cat',
-				'exclude'	=> array(23,32), //Exclude: Uncategorized, Art Courses
+				'include'	=> array(27,29,30),
 				'hide_empty' => false
 			);
 			$products_categories = get_terms( $args );
