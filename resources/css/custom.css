@@ -57,6 +57,10 @@ article > *:not(.entry-content),
     @apply md:m-0 ml-8;
 }
 
+.menu-primary-menu-english li.menu-item:last-child .sub-menu{
+  right: 0 !important;
+}
+
 .woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
     float:none;
     width: 100%;
