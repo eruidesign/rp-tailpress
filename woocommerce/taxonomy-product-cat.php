@@ -37,8 +37,6 @@ get_header( 'shop' );
 
     <?php if (in_array($current_term_ID, [48,49])) : ?>
 
-        <p>It's WAM or SOS</p>
-
         <div class="grid grid-cols-[1fr_4fr]">
 
             <?php
@@ -50,11 +48,11 @@ get_header( 'shop' );
                 $child_categories = get_terms( $args );
             ?>
 
-            <ul>
+            <ul class="bg-rpgreen-900">
 
                 <?php foreach ($child_categories as $cat) : ?> 
                     <li>
-                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="bg-gray-500 text-white hover:bg-gray-400"><?php echo $cat->name;?></a>
+                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="text-white hover:text-rpgreen-400 p-4"><?php echo $cat->name;?></a>
                     </li>
                 <?php endforeach;?>
 
