@@ -849,6 +849,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.grid-cols-\[200px_minmax\(900px\2c _1fr\)_100px\] {
+  grid-template-columns: 200px minmax(900px, 1fr) 100px;
+}
+
+.grid-cols-\[1\] {
+  grid-template-columns: 1;
+}
+
+.grid-cols-\[1fr_3fr\] {
+  grid-template-columns: 1fr 3fr;
+}
+
 .flex-row {
   flex-direction: row;
 }

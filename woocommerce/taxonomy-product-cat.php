@@ -39,6 +39,49 @@ get_header( 'shop' );
 
         <p>It's WAM or SOS</p>
 
+        <div class="grid grid-cols-[1fr_3fr]">
+
+            <?php
+                $args = array(
+                    'taxonomy'	=> 'product_cat',
+                    'hide_empty' => false,
+                    'child_of'   => $termId,
+                );
+                $child_categories = get_terms( $args );
+            ?>
+
+            <ul>
+
+                <?php foreach ($child_categories as $cat) : ?> 
+                    <li>
+                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="bg-gray-500 text-white hover:bg-gray-400"><?php echo $cat->name;?></a>
+                    </li>
+                <?php endforeach;?>
+
+            </ul>
+            <div>
+
+            <?php
+
+            if ( wc_get_loop_prop( 'total' ) ) {
+                while ( have_posts() ) {
+                    the_post();
+
+                    /**
+                     * Hook: woocommerce_shop_loop.
+                     */
+                    //do_action( 'woocommerce_shop_loop' );
+
+                    wc_get_template_part( 'content', 'product' );
+                }
+            }
+            
+            ?>
+                    
+            </div>
+
+        </div>
+
     <?php elseif ( woocommerce_product_loop() ) : ?>
 
     <div class="products grid grid-cols-4 gap-4">
