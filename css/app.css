@@ -1488,7 +1488,7 @@ article > *:not(.entry-content), .entry-content > * {
   }
 }
 
-.menu-primary-menu-english li.menu-item:last-child .sub-menu{
+.menu-primary-menu-english li:last-of-type .sub-menu{
   right: 0 !important;
 }
 
