@@ -39,7 +39,7 @@ get_header( 'shop' );
 
         <p>It's WAM or SOS</p>
 
-        <div class="grid grid-cols-[1fr_3fr]">
+        <div class="grid grid-cols-[1fr_4fr]">
 
             <?php
                 $args = array(

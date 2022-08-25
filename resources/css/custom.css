@@ -465,3 +465,20 @@ summary::-webkit-details-marker {
   list-style-type: disc;
   list-style-position: inside;
 }
+
+
+/*  */
+.tax-product_cat {
+  .pswp{
+    @apply invisible;
+  }
+  .woocommerce-tabs{
+    @apply col-span-3;
+  }
+  .products.columns-4{
+    @apply flex;
+  }
+  .products.columns-4 > div{
+    @apply m-1;
+  }
+}
