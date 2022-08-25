@@ -45,7 +45,7 @@ get_header( 'shop' );
                 $args = array(
                     'taxonomy'	=> 'product_cat',
                     'hide_empty' => false,
-                    'child_of'   => $termId,
+                    'child_of'   => $current_term_ID,
                 );
                 $child_categories = get_terms( $args );
             ?>
@@ -72,10 +72,10 @@ get_header( 'shop' );
                      */
                     //do_action( 'woocommerce_shop_loop' );
 
-                    wc_get_template_part( 'content', 'product' );
+                    wc_get_template_part( 'content', 'single-product' );
                 }
             }
-            
+
             ?>
                     
             </div>
