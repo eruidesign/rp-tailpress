@@ -38,13 +38,13 @@
 				<?php get_template_part( 'template-parts/content', 'single-page' ); ?>
 
                 <?php
-                    $terms = get_terms( 'product_cat', array(
+                    $products_categories = get_terms( 'product_cat', array(
                         'include' => array( 48,49 ),
                         'hide_empty' => false,
                     ) );
                 ?>
 
-                <?php if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) : ?>
+                <?php if ( ! empty( $products_categories ) && ! is_wp_error( $products_categories ) ) : ?>
 
                 <div class="container mx-auto min-h-[600px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
                     
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                     <?php endforeach;?>
-                    
+
                 </div>
 
                 <?php endif;?>
