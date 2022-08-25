@@ -33,7 +33,13 @@ get_header( 'shop' );
 		}
 	?>
 
-    <?php if ( woocommerce_product_loop() ) : ?>
+<?php $current_term_ID = get_queried_object_id();?>
+
+    <?php if (in_array($current_term_ID, [48,49])) : ?>
+
+        <p>It's WAM or SOS</p>
+
+    <?php elseif ( woocommerce_product_loop() ) : ?>
 
     <div class="products grid grid-cols-4 gap-4">
         <?php
