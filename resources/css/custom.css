@@ -57,7 +57,7 @@ article > *:not(.entry-content),
     @apply md:m-0 ml-8;
 }
 
-.menu-primary-menu-english li:last-of-type .sub-menu{
+.last-menu-element .sub-menu{
   right: 0 !important;
 }
 
