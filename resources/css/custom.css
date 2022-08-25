@@ -471,12 +471,11 @@ summary::-webkit-details-marker {
 .tax-product_cat {
   .pswp{
     @apply hidden;
-    
   }
   .woocommerce-tabs{
     @apply col-span-3;
   }
-  .products.columns-4{
+  .woocommerce-tabs .woocommerce.columns-4{
     @apply flex;
   }
   .products.columns-4 > div{
