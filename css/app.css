@@ -854,10 +854,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.grid-cols-\[1fr_3fr\] {
-  grid-template-columns: 1fr 3fr;
-}
-
 .grid-cols-\[1fr_4fr\] {
   grid-template-columns: 1fr 4fr;
 }
@@ -2028,7 +2024,7 @@ summary::-webkit-details-marker {
 /*  */
 
 .tax-product_cat .pswp {
-    visibility: hidden;
+    display: none;
   }
 
 .tax-product_cat .woocommerce-tabs {

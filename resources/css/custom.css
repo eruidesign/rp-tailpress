@@ -470,7 +470,8 @@ summary::-webkit-details-marker {
 /*  */
 .tax-product_cat {
   .pswp{
-    @apply invisible;
+    @apply hidden;
+    
   }
   .woocommerce-tabs{
     @apply col-span-3;
