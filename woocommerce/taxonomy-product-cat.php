@@ -121,7 +121,7 @@ get_header( 'shop' );
                 'status'               => 'publish',
                 'limit'                => 1,
                 'page'                 => $paged,
-                'paginate'             => true,
+                //'paginate'             => true,
                 'return'               => 'ids',
                 'orderby'              => $ordering['orderby'],
                 'order'                => $ordering['order'],
@@ -140,7 +140,7 @@ get_header( 'shop' );
                   foreach($products_ids->products as $featured_product) {
                     $post_object = get_post($featured_product);
                     setup_postdata($GLOBALS['post'] =& $post_object);
-                    wc_get_template_part('content', 'product');
+                    wc_get_template_part('content', 'single-product');
                   }
                   wp_reset_postdata();
                 woocommerce_product_loop_end();
