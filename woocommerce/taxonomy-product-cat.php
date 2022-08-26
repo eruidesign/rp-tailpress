@@ -104,17 +104,23 @@ get_header( 'shop' );
 
 
             <?php
-
-
-
             //$_product = $_pf->get_product($parent_term_ID);
 
+            $args = array(
+                'category' => array( 'wam' ),
+            );
+            $products = wc_get_products( $args );
 
-
+            do_action('woocommerce_before_shop_loop');
+            woocommerce_product_loop_start();
+            foreach($featured_products->products as $featured_product) {
+                $post_object = get_post($featured_product);
+                setup_postdata($GLOBALS['post'] =& $post_object);
+                wc_get_template_part('content', 'single-product');
+            }
+            wp_reset_postdata();
+            woocommerce_product_loop_end();
             ?>
-
-
-        
 
         </div>
 
