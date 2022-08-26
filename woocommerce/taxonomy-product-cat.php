@@ -113,8 +113,8 @@ get_header( 'shop' );
 
             do_action('woocommerce_before_shop_loop');
             woocommerce_product_loop_start();
-            foreach($featured_products->products as $featured_product) {
-                $post_object = get_post($featured_product);
+            foreach($products->products as $product) {
+                $post_object = get_post($product);
                 setup_postdata($GLOBALS['post'] =& $post_object);
                 wc_get_template_part('content', 'single-product');
             }
