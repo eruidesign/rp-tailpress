@@ -866,6 +866,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   grid-template-columns: 1fr 4fr;
 }
 
+.grid-cols-\[1fr_3fr\] {
+  grid-template-columns: 1fr 3fr;
+}
+
 .flex-row {
   flex-direction: row;
 }
