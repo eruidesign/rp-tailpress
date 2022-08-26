@@ -110,7 +110,8 @@ get_header( 'shop' );
 
             // Display featured products by category. on this case its "shirts" which is the slug of the category.
             $query_args = array(
-                'category'  => array( 'wam' ),
+                //'category'  => array( 'wam' ),
+                'category' => array($parent_term_ID),
                 'limit'     => 1,
             );
             $products = wc_get_products( $query_args );
@@ -125,6 +126,26 @@ get_header( 'shop' );
                     $post = get_post($product->get_id());
                     setup_postdata($post);
                     wc_get_template_part('content', 'single-bundle');
+                }
+                wp_reset_postdata();
+                woocommerce_product_loop_end();
+            ?>
+
+            <?php
+
+            $sub_query_args = array(
+                //'category'  => array( 'wam' ),
+                'category' => array($parent_term_ID),
+                'limit'     => 1,
+            );
+            $sub_products = wc_get_products( $sub_query_args );
+
+
+                woocommerce_product_loop_start();
+                foreach ($sub_products as $product) {
+                    $post = get_post($product->get_id());
+                    setup_postdata($post);
+                    wc_get_template_part('content', 'product');
                 }
                 wp_reset_postdata();
                 woocommerce_product_loop_end();
