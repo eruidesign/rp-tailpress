@@ -112,7 +112,7 @@ get_header( 'shop' );
             
             
               $products_ids            = wc_get_products(array(
-                'category'             => array('wam'),
+                //'category'             => array('wam'),
                 'status'               => 'publish',
                 'limit'                => 1,
                 'return'               => 'ids',
