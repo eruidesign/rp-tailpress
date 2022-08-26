@@ -508,6 +508,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.static {
+  position: static;
+}
+
 .absolute {
   position: absolute;
 }
