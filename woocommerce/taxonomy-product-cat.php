@@ -135,8 +135,7 @@ get_header( 'shop' );
 
             $sub_query_args = array(
                 //'category'  => array( 'wam' ),
-                'category' => array($parent_term_ID),
-                'limit'     => 1,
+                'category' => array('seasons'),
             );
             $sub_products = wc_get_products( $sub_query_args );
 
