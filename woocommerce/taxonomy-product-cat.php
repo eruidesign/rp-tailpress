@@ -110,8 +110,8 @@ get_header( 'shop' );
 
             // Display featured products by category. on this case its "shirts" which is the slug of the category.
             $query_args = array(
-                'category' => array( 'wam' ),
-                'include'   => array('511'),
+                'category'  => array( 'wam' ),
+                'limit'     => 1,
             );
             $products = wc_get_products( $query_args );
 
