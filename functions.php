@@ -247,7 +247,7 @@ function codemode__show_linked_product( $content ){
 function exclude_product_cat_children($wp_query) {
     if ( is_product_category() ) {
         //if ( isset ( $wp_query->query_vars['product_cat'] ) && $wp_query->is_main_query()) {
-        if ( isset ( $wp_query->query_vars['product_cat'] ) && $wp_query->is_main_query()) {
+        if ( isset ( $wp_query->query_vars['product_cat'] ) ) {
             $wp_query->set('tax_query', array(
                 array (
                     'taxonomy' => 'product_cat',
