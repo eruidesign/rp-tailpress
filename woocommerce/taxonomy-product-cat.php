@@ -125,6 +125,7 @@ get_header( 'shop' );
                 'return'               => 'ids',
                 'orderby'              => $ordering['orderby'],
                 'order'                => $ordering['order'],
+                'include_children'     => false
               ));
             
               wc_set_loop_prop('current_page', $paged);
