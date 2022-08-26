@@ -111,6 +111,8 @@ get_header( 'shop' );
             );
             $products = wc_get_products( $args );
 
+            print_r($products);
+
             do_action('woocommerce_before_shop_loop');
             woocommerce_product_loop_start();
             foreach($products->products as $product) {
