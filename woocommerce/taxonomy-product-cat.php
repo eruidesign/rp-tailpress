@@ -35,8 +35,8 @@ get_header( 'shop' );
 
     <?php 
         $current_term = get_queried_object();
-        //echo $current_term->parent;
-        print_r($current_term);
+        $current_term_ID = $current_term->term_id;
+        $parent_term_ID = $current_term->parent;
     ?>
 
     <?php if (in_array($current_term_ID, [48,49])) : ?>
@@ -76,7 +76,58 @@ get_header( 'shop' );
 
         </div>
 
-    <?php elseif ( woocommerce_product_loop() ) : ?>
+        (in_array($current_term_ID, [48,49]))
+
+    <?php //elseif ( woocommerce_product_loop() ) : ?>
+    <?php elseif (in_array($parent_term_ID, [48,49])) : ?>
+
+    <div class="grid grid-cols-[1fr_4fr]">
+
+        <div>
+            <h3>Song Sets</h3>
+            <?php
+                $args = array(
+                    'taxonomy'	=> 'product_cat',
+                    'hide_empty' => false,
+                    'child_of'   => $parent_term_ID,
+                );
+                $sibling_categories = get_terms( $args );
+            ?>
+            <ul>
+                <?php foreach ($child_categories as $cat) : ?> 
+                    <li>
+                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">More<span> →</span></a>
+                    </li>
+                <?php endforeach;?>
+            </ul>
+        </div>
+
+        <div>
+            <?php
+
+            if ( wc_get_loop_prop( 'total' ) ) {
+                    while ( have_posts() ) {
+                        the_post();
+            
+                        /**
+                         * Hook: woocommerce_shop_loop.
+                         */
+                        //do_action( 'woocommerce_shop_loop' );
+            
+                        wc_get_template_part( 'content', 'single-product' );
+                    }
+                };
+            ?>
+
+        </div>
+
+    </div>
+
+
+
+    <?php else : ?>
+
+        <?php //do_action( 'woocommerce_no_products_found' ); ?>
 
         <div class="products grid grid-cols-4 gap-4">
             <?php
@@ -95,10 +146,6 @@ get_header( 'shop' );
                 }
             ?>
         </div>
-
-    <?php else : ?>
-
-        <?php do_action( 'woocommerce_no_products_found' ); ?>
 
     <?php endif;?>
 
