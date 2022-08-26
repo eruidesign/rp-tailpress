@@ -69,7 +69,7 @@ get_header( 'shop' );
                         <div class="text-gray-400"><?php echo $cat->description;?></div>
                     </div>
                     <div class="p-4 flex">
-                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400"><?php $cat->name;?><span> →</span></a>
+                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400"><?php echo $cat->name;?><span> →</span></a>
                     </div>
                 </div>
             <?php endforeach;?>
@@ -94,7 +94,7 @@ get_header( 'shop' );
             <ul>
                 <?php foreach ($sibling_categories as $cat) : ?> 
                     <li>
-                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="text-rpgreen-900"><?php $cat->name;?><span> →</span></a>
+                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="text-rpgreen-900"><?php echo $cat->name;?><span> →</span></a>
                     </li>
                 <?php endforeach;?>
             </ul>
@@ -102,23 +102,19 @@ get_header( 'shop' );
 
         <div>
 
-        
+
             <?php
 
 
-            if ( wc_get_loop_prop( 'total' ) ) {
-                    while ( have_posts() ) {
-                        the_post();
-            
-                        /**
-                         * Hook: woocommerce_shop_loop.
-                         */
-                        //do_action( 'woocommerce_shop_loop' );
-            
-                        wc_get_template_part( 'content', 'product' );
-                    }
-                };
+
+            //$_product = $_pf->get_product($parent_term_ID);
+
+
+
             ?>
+
+
+        
 
         </div>
 
