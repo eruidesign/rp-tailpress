@@ -131,24 +131,8 @@ get_header( 'shop' );
                 woocommerce_product_loop_end();
             ?>
 
-            <?php
-
-            $sub_query_args = array(
-                //'category'  => array( 'wam' ),
-                'category' => array('seasons'),
-            );
-            $sub_products = wc_get_products( $sub_query_args );
 
 
-                woocommerce_product_loop_start();
-                foreach ($sub_products as $product) {
-                    $post = get_post($product->get_id());
-                    setup_postdata($post);
-                    wc_get_template_part('content', 'product');
-                }
-                wp_reset_postdata();
-                woocommerce_product_loop_end();
-            ?>
 
             
         </div>
