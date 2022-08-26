@@ -116,7 +116,7 @@ get_header( 'shop' );
             foreach($products->products as $product) {
                 $post_object = get_post($product);
                 setup_postdata($GLOBALS['post'] =& $post_object);
-                wc_get_template_part('content', 'single-product');
+                wc_get_template_part('content', 'product');
             }
             wp_reset_postdata();
             woocommerce_product_loop_end();
