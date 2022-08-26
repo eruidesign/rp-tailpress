@@ -94,7 +94,7 @@ get_header( 'shop' );
                 $sibling_categories = get_terms( $args );
             ?>
             <ul>
-                <?php foreach ($child_categories as $cat) : ?> 
+                <?php foreach ($sibling_categories as $cat) : ?> 
                     <li>
                         <a href="<?php echo esc_url(get_term_link($cat));?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">More<span> →</span></a>
                     </li>
