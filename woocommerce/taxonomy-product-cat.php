@@ -33,7 +33,11 @@ get_header( 'shop' );
 		}
 	?>
 
-    <?php $current_term_ID = get_queried_object_id();?>
+    <?php 
+        $current_term = get_queried_object();
+        //echo $current_term->parent;
+        print_r($current_term);
+    ?>
 
     <?php if (in_array($current_term_ID, [48,49])) : ?>
 
