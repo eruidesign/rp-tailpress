@@ -119,17 +119,6 @@ get_header( 'shop' );
             global $post;
 
             ?>
-            
-            <?php
-                woocommerce_product_loop_start();
-                foreach ($products as $product) {
-                    $post = get_post($product->get_id());
-                    setup_postdata($post);
-                    wc_get_template_part('content', 'single-bundle');
-                }
-                wp_reset_postdata();
-                woocommerce_product_loop_end();
-            ?>
 
 
 
