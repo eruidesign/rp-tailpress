@@ -69,14 +69,12 @@ get_header( 'shop' );
                         <div class="text-gray-400"><?php echo $cat->description;?></div>
                     </div>
                     <div class="p-4 flex">
-                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">More<span> →</span></a>
+                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400"><?php $cat->name;?><span> →</span></a>
                     </div>
                 </div>
             <?php endforeach;?>
 
         </div>
-
-        (in_array($current_term_ID, [48,49]))
 
     <?php //elseif ( woocommerce_product_loop() ) : ?>
     <?php elseif (in_array($parent_term_ID, [48,49])) : ?>
@@ -84,7 +82,7 @@ get_header( 'shop' );
     <div class="grid grid-cols-[1fr_4fr]">
 
         <div>
-            <h3>Song Sets</h3>
+            <h3 class="text-xl text-bold">Song Sets</h3>
             <?php
                 $args = array(
                     'taxonomy'	=> 'product_cat',
@@ -96,14 +94,17 @@ get_header( 'shop' );
             <ul>
                 <?php foreach ($sibling_categories as $cat) : ?> 
                     <li>
-                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">More<span> →</span></a>
+                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="text-rpgreen-900"><?php $cat->name;?><span> →</span></a>
                     </li>
                 <?php endforeach;?>
             </ul>
         </div>
 
         <div>
+
+        
             <?php
+
 
             if ( wc_get_loop_prop( 'total' ) ) {
                     while ( have_posts() ) {
