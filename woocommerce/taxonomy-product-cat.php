@@ -122,7 +122,7 @@ get_header( 'shop' );
                 'limit'                => 1,
                 'page'                 => $paged,
                 //'paginate'             => true,
-                'return'               => 'ids',
+                //'return'               => 'ids',
                 'orderby'              => $ordering['orderby'],
                 'order'                => $ordering['order'],
               ));
