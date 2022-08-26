@@ -117,6 +117,7 @@ get_header( 'shop' );
               $products_per_page       = apply_filters('loop_shop_per_page', wc_get_default_products_per_row() * wc_get_default_product_rows_per_page());
             
               $products_ids            = wc_get_products(array(
+                'category'             => array('wam'),
                 'status'               => 'publish',
                 'limit'                => $products_per_page,
                 'page'                 => $paged,
