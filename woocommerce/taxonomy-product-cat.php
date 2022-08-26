@@ -126,6 +126,8 @@ get_header( 'shop' );
                 'orderby'              => $ordering['orderby'],
                 'order'                => $ordering['order'],
               ));
+
+              print_r($products_ids);
             
               wc_set_loop_prop('current_page', $paged);
               wc_set_loop_prop('is_paginated', wc_string_to_bool(true));
