@@ -5,9 +5,9 @@
 	</header>
 
 	<div class="entry-content">
-		<?php the_content(); ?>
-
-
+		
+    <?php the_content(); ?>
+        
         <?php
             $postid = get_the_ID();
             $pages = get_pages( array( 'child_of' => $postid, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );

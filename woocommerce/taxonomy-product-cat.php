@@ -33,72 +33,64 @@ get_header( 'shop' );
 		}
 	?>
 
-<?php $current_term_ID = get_queried_object_id();?>
+    <?php $current_term_ID = get_queried_object_id();?>
 
     <?php if (in_array($current_term_ID, [48,49])) : ?>
 
-        <div class="grid grid-cols-[1fr_4fr]">
+        <?php
+            $args = array(
+                'taxonomy'	=> 'product_cat',
+                'hide_empty' => false,
+                'child_of'   => $current_term_ID,
+            );
+            $child_categories = get_terms( $args );
+        ?>
 
-            <?php
-                $args = array(
-                    'taxonomy'	=> 'product_cat',
-                    'hide_empty' => false,
-                    'child_of'   => $current_term_ID,
-                );
-                $child_categories = get_terms( $args );
-            ?>
-
-            <ul class="bg-rpgreen-900">
-
-                <?php foreach ($child_categories as $cat) : ?> 
-                    <li>
-                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="text-white hover:text-rpgreen-400 p-4"><?php echo $cat->name;?></a>
-                    </li>
-                <?php endforeach;?>
-
-            </ul>
-            <div>
-
-            <?php
-
-            if ( wc_get_loop_prop( 'total' ) ) {
-                while ( have_posts() ) {
-                    the_post();
-
-                    /**
-                     * Hook: woocommerce_shop_loop.
-                     */
-                    //do_action( 'woocommerce_shop_loop' );
-
-                    wc_get_template_part( 'content', 'single-product' );
-                }
-            }
-
-            ?>
-                    
-            </div>
+        <div class="container mx-auto min-h-[600px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                
+            <?php foreach ($child_categories as $cat) : ?> 
+    
+                <div class="overflow-hidden rounded-lg bg-gray-100 flex flex-col">
+                    <div class="text-center flex-grow">
+                        <?php
+                            $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
+                            $image = wp_get_attachment_image_url( $thumbnail_id, 'woocommerce_thumbnail' );
+                        ?>
+                        <?php if ( $image ) : ?>
+                            <img src="<?php echo $image;?>" alt="<?php echo $cat->name;?>" class="w-full"/>
+                        <?php else : ?>
+                            <div class="w-[100%] aspect-square bg-slate-400"></div>
+                        <?php endif;?>
+                        <h3 class="my-4 text-xl"><?php echo $cat->name;?></h3>
+                        <div class="text-gray-400"><?php echo $cat->description;?></div>
+                    </div>
+                    <div class="p-4 flex">
+                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">More<span> →</span></a>
+                    </div>
+                </div>
+            <?php endforeach;?>
 
         </div>
 
     <?php elseif ( woocommerce_product_loop() ) : ?>
 
-    <div class="products grid grid-cols-4 gap-4">
-        <?php
+        <div class="products grid grid-cols-4 gap-4">
+            <?php
 
-            if ( wc_get_loop_prop( 'total' ) ) {
-                while ( have_posts() ) {
-                    the_post();
-        
-                    /**
-                     * Hook: woocommerce_shop_loop.
-                     */
-                    //do_action( 'woocommerce_shop_loop' );
-        
-                    wc_get_template_part( 'content', 'product' );
+                if ( wc_get_loop_prop( 'total' ) ) {
+                    while ( have_posts() ) {
+                        the_post();
+            
+                        /**
+                         * Hook: woocommerce_shop_loop.
+                         */
+                        //do_action( 'woocommerce_shop_loop' );
+            
+                        wc_get_template_part( 'content', 'product' );
+                    }
                 }
-            }
-        ?>
-    </div>
+            ?>
+        </div>
 
     <?php else : ?>
 
