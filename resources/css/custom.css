@@ -484,5 +484,5 @@ summary::-webkit-details-marker {
 }
 
 .woocommerce.columns-5 .products{
-  @apply !grid !grid-cols-5;
+  @apply !grid;
 }

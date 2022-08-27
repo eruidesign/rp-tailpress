@@ -673,10 +673,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: grid;
 }
 
-.\!grid {
-  display: grid !important;
-}
-
 .hidden {
   display: none;
 }
@@ -2054,7 +2050,6 @@ summary::-webkit-details-marker {
 
 .woocommerce.columns-5 .products {
   display: grid !important;
-  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
 }
 
 @font-face {
