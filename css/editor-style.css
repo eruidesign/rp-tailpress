@@ -211,6 +211,10 @@
   display: grid
 }
 
+.\!grid {
+  display: grid !important
+}
+
 .hidden {
   display: none
 }
@@ -376,6 +380,11 @@
        columns: 4
 }
 
+.columns-5 {
+  -moz-columns: 5;
+       columns: 5
+}
+
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr))
 }
@@ -426,6 +435,10 @@
 
 .grid-cols-\[1fr_\] {
   grid-template-columns: 1fr
+}
+
+.\!grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important
 }
 
 .flex-row {

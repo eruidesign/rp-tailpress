@@ -40,8 +40,6 @@ if ( post_password_required() ) {
 <?php //woocommerce_template_single_rating();?>
 <?php //woocommerce_template_single_meta();?>
 
-Single Product
-
 </header>
 
 <?php

@@ -51,8 +51,6 @@ $shop_page = get_post($shop_page_ID);
 
 	<header class="woocommerce-products-header">
 
-		<h1 style="color:red;">archive-product.php</h1>	
-
 		<!-- <?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 			<h1 class="woocommerce-products-header__title page-title text-4xl"><?php woocommerce_page_title(); ?></h1>
 		<?php endif; ?> -->

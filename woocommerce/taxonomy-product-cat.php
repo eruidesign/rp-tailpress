@@ -40,7 +40,6 @@ get_header( 'shop' );
         
         if($parent_term_ID){
             $parent_term_slug = get_term( $parent_term_ID )->slug;
-            echo 'Parent Category: '.$parent_term_slug;
         }
 
     ?>
@@ -82,10 +81,7 @@ get_header( 'shop' );
 
         </div>
 
-    <?php //elseif ( woocommerce_product_loop() ) : ?>
     <?php elseif (in_array($parent_term_slug, ['wam','sos'])) : ?>
-
-        <p>WAM or SOS</p>
 
     <div class="grid grid-cols-[1fr_4fr]">
 
