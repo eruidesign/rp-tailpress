@@ -83,9 +83,7 @@ get_header( 'shop' );
         </div>
 
     <?php //elseif ( woocommerce_product_loop() ) : ?>
-    <?php elseif (in_array($parent_term_slug, ['wam','sos'])) : ?>
-
-        <p>WAM or SOS</p>
+    <?php elseif (in_array($parent_term_slug, ['wamx','sosx'])) : ?>
 
     <div class="grid grid-cols-[1fr_4fr]">
 
@@ -108,7 +106,117 @@ get_header( 'shop' );
             </ul>
         </div>
 
-        <div class="products woocommerce">
+        <div>
+
+        <?php
+        /*
+        if(!function_exists('wc_get_products')) {
+            return;
+        }
+
+        $paged                   = (get_query_var('paged')) ? absint(get_query_var('paged')) : 1;
+        $ordering                = WC()->query->get_catalog_ordering_args();
+        $ordering['orderby']     = array_shift(explode(' ', $ordering['orderby']));
+        $ordering['orderby']     = stristr($ordering['orderby'], 'price') ? 'meta_value_num' : $ordering['orderby'];
+        //$products_per_page       = apply_filters('loop_shop_per_page', wc_get_default_products_per_row() * wc_get_default_product_rows_per_page());
+
+        $featured_products       = wc_get_products(array(
+            'meta_key'             => '_price',
+            'status'               => 'publish',
+            'limit'                => 1,
+            'page'                 => $paged,
+            'featured'             => true,
+            'paginate'             => true,
+            'return'               => 'ids',
+            'orderby'              => $ordering['orderby'],
+            'order'                => $ordering['order'],
+        ));
+
+        wc_set_loop_prop('current_page', $paged);
+        wc_set_loop_prop('is_paginated', wc_string_to_bool(true));
+        wc_set_loop_prop('page_template', get_page_template_slug());
+        wc_set_loop_prop('per_page', 1);
+        wc_set_loop_prop('total', $featured_products->total);
+        wc_set_loop_prop('total_pages', $featured_products->max_num_pages);
+
+        if($featured_products) {
+            do_action('woocommerce_before_shop_loop');
+            woocommerce_product_loop_start();
+            foreach($featured_products->products as $featured_product) {
+                $post_object = get_post($featured_product);
+                setup_postdata($GLOBALS['post'] =& $post_object);
+                wc_get_template_part('content', 'single-bundle');
+            }
+            wp_reset_postdata();
+            woocommerce_product_loop_end();
+            do_action('woocommerce_after_shop_loop');
+        } else {
+            do_action('woocommerce_no_products_found');
+        }
+        */
+
+
+
+        if ( woocommerce_product_loop() ) {
+
+            /**
+             * Hook: woocommerce_before_shop_loop.
+             *
+             * @hooked woocommerce_output_all_notices - 10
+             * @hooked woocommerce_result_count - 20
+             * @hooked woocommerce_catalog_ordering - 30
+             */
+            do_action( 'woocommerce_before_shop_loop' );
+        
+            woocommerce_product_loop_start();
+        
+            if ( wc_get_loop_prop( 'total' ) ) {
+                while ( have_posts() ) {
+                    the_post();
+        
+                    /**
+                     * Hook: woocommerce_shop_loop.
+                     */
+                    do_action( 'woocommerce_shop_loop' );
+        
+                    wc_get_template_part( 'content', 'single-product' );
+                }
+            }
+        
+            woocommerce_product_loop_end();
+
+        }
+
+        ?>
+
+
+
+    </div>
+
+    <?php else : ?>
+
+        <div class="grid grid-cols-[1fr_4fr]">
+
+            <div>
+                <h3 class="text-xl text-bold">Song Sets</h3>
+                <?php
+                    $args = array(
+                        'taxonomy'	=> 'product_cat',
+                        'hide_empty' => false,
+                        'child_of'   => $parent_term_ID,
+                    );
+                    $sibling_categories = get_terms( $args );
+                ?>
+                <ul>
+                    <?php foreach ($sibling_categories as $cat) : ?> 
+                        <li>
+                            <a href="<?php echo esc_url(get_term_link($cat));?>" class="text-rpgreen-900"><?php echo $cat->name;?><span> →</span></a>
+                        </li>
+                    <?php endforeach;?>
+                </ul>
+            </div>
+
+            <div class="products woocommerce">
 
                 <?php
 
@@ -136,28 +244,6 @@ get_header( 'shop' );
                 ?>
             </div>
 
-
-    </div>
-
-    <?php else : ?>
-
-
-        <div class="products grid grid-cols-4 gap-4">
-            <?php
-
-                if ( wc_get_loop_prop( 'total' ) ) {
-                    while ( have_posts() ) {
-                        the_post();
-            
-                        /**
-                         * Hook: woocommerce_shop_loop.
-                         */
-                        //do_action( 'woocommerce_shop_loop' );
-            
-                        wc_get_template_part( 'content', 'product' );
-                    }
-                }
-            ?>
         </div>
 
     <?php endif;?>

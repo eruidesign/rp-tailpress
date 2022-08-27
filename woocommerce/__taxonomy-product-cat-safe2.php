@@ -24,6 +24,8 @@ get_header( 'shop' );
 ?>
 
 <div class="container my-8 mx-auto">
+
+    <h1>taxonomy-product-cat.php</h1>
 	
 	<?php
 		if ( function_exists('yoast_breadcrumb') ) {
@@ -40,9 +42,9 @@ get_header( 'shop' );
         
         if($parent_term_ID){
             $parent_term_slug = get_term( $parent_term_ID )->slug;
-            echo 'Parent Category: '.$parent_term_slug;
         }
 
+        echo $parent_term_slug;
     ?>
 
     <?php if (in_array($current_term_slug, ['wam','sos'])) : ?>
@@ -57,7 +59,7 @@ get_header( 'shop' );
         ?>
 
         <div class="container mx-auto min-h-[600px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-
+                
             <?php foreach ($child_categories as $cat) : ?> 
     
                 <div class="overflow-hidden rounded-lg bg-gray-100 flex flex-col">
@@ -83,9 +85,7 @@ get_header( 'shop' );
         </div>
 
     <?php //elseif ( woocommerce_product_loop() ) : ?>
-    <?php elseif (in_array($parent_term_slug, ['wam','sos'])) : ?>
-
-        <p>WAM or SOS</p>
+    <?php elseif (in_array($parent_term_slug, ['wamx','sosx'])) : ?>
 
     <div class="grid grid-cols-[1fr_4fr]">
 
@@ -108,39 +108,41 @@ get_header( 'shop' );
             </ul>
         </div>
 
-        <div class="products woocommerce">
+        <div>
 
-                <?php
+            <?php
+            //$_product = $_pf->get_product($parent_term_ID);
 
-                    if ( woocommerce_product_loop() ) {
+            // Display featured products by category. on this case its "shirts" which is the slug of the category.
+            $query_args = array(
+                //'category'  => array( 'wam' ),
+                'category' => array('wam'),
+                'limit'     => 1,
+            );
+            $products = wc_get_products( $query_args );
 
-                        woocommerce_product_loop_start();
+            global $post;
 
-                        if ( wc_get_loop_prop( 'total' ) ) {
-                            while ( have_posts() ) {
-                                the_post();
-
-                                /**
-                                 * Hook: woocommerce_shop_loop.
-                                 */
-                                do_action( 'woocommerce_shop_loop' );
-
-                                wc_get_template_part( 'content', 'single-bundle' );
-
-                                the_content();
-                            }
-                        }
-                        woocommerce_product_loop_end();
-                    }
-
-                ?>
-            </div>
-
+            ?>
+            
+            <?php
+                woocommerce_product_loop_start();
+                foreach ($products as $product) {
+                    $post = get_post($product->get_id());
+                    setup_postdata($post);
+                    wc_get_template_part('content', 'single-bundle');
+                }
+                wp_reset_postdata();
+                woocommerce_product_loop_end();
+            ?>
+            
+        </div>
 
     </div>
 
     <?php else : ?>
 
+        <?php //do_action( 'woocommerce_no_products_found' ); ?>
 
         <div class="products grid grid-cols-4 gap-4">
             <?php
@@ -154,7 +156,7 @@ get_header( 'shop' );
                          */
                         //do_action( 'woocommerce_shop_loop' );
             
-                        wc_get_template_part( 'content', 'product' );
+                        wc_get_template_part( 'content', 'single-bundle' );
                     }
                 }
             ?>

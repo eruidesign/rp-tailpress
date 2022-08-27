@@ -37,13 +37,20 @@
 
 				<?php get_template_part( 'template-parts/content', 'single-page' ); ?>
 
+                <?php 
+
+                    $ID_1 = get_term_by( 'slug', 'wam', 'product_cat' )->term_id;
+                    $ID_2 = get_term_by( 'slug', 'sos', 'product_cat' )->term_id;
+
+                ?>
+
                 <?php
                     $products_categories = get_terms( 'product_cat', array(
-                        'include' => array( 48,49 ),
+                        'include' => array( $ID_1,$ID_2 ),
                         'hide_empty' => false,
                     ) );
                 ?>
-
+<p>Hello</p>
                 <?php if ( ! empty( $products_categories ) && ! is_wp_error( $products_categories ) ) : ?>
 
                 <div class="container mx-auto min-h-[600px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">

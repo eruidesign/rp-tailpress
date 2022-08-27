@@ -157,7 +157,19 @@ function yoast_seo_breadcrumb_append_link( $links ) {
 //remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 //remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 //remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+/*
+@hooked woocommerce_show_product_sale_flash - 10
+@hooked woocommerce_show_product_images - 20
+do_action( 'woocommerce_before_single_product_summary' );
+*/
+function remove_details_on_products(){  
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
+    remove_action( 'woocommerce_after_single_product_summary', 'storefront_upsell_display', 15 );
+    remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+}
+add_action('init', 'remove_details_on_products', 10);
 
 add_post_type_support( 'page', 'excerpt' );
 
@@ -259,5 +271,29 @@ function exclude_product_cat_children($wp_query) {
         }
     } 
 }
-    
-add_filter('pre_get_posts', 'exclude_product_cat_children', PHP_INT_MAX );
+
+add_action( 'woocommerce_product_query', function ($query) {
+
+	if ( ! is_admin() && $query->is_main_query() ) {
+		// Not a query for an admin page.
+		// It's the main query for a front end page of your site.
+
+		if ( is_product_category('seasons') ) {
+			// It's the main query for a product category archive.
+
+			$tax_query = (array) $query->get( 'tax_query' );
+
+			// Tax query to exclude featured product 
+			$tax_query[] = array(
+				'taxonomy' => 'product_visibility',
+				'field'    => 'name',
+				'terms'    => 'featured',
+			);
+
+
+			$query->set( 'tax_query', $tax_query );
+		}
+
+	}
+
+} ); 
