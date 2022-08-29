@@ -2076,9 +2076,10 @@ summary::-webkit-details-marker {
   gap: 0.25rem;
 }
 
-.woocommerce-Tabs-panel .woocommerce .products ::before{
-    display:none;
-  }
+.woocommerce-Tabs-panel .woocommerce .products::before,
+.woocommerce-Tabs-panel .woocommerce .products::after{
+  display:none;
+}
 
 .grid-with_sidebar{
 }
