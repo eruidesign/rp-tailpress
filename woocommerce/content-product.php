@@ -25,7 +25,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 
-<div class="overflow-hidden rounded-lg bg-gray-100 flex flex-col">
+<li class="overflow-hidden rounded-lg bg-gray-100 flex flex-col">
 	<div class="text-center flex-grow">
 		<?php the_post_thumbnail('woocommerce_thumbnail',array('class' => 'w-full'));?>
 		<h3 class="my-4 text-xl"><?php the_title();?></h3>
@@ -34,4 +34,4 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	<div class="p-4 flex">
 		<a href="<?php the_permalink();?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">More<span> →</span></a>
 	</div>
-</div>
+</li>
