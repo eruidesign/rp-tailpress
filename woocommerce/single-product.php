@@ -21,20 +21,81 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-<div class="container my-8 mx-auto">
-
 	<?php
+		/**
+		 * woocommerce_before_main_content hook.
+		 *
+		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+		 * @hooked woocommerce_breadcrumb - 20
+		 */
+		//do_action( 'woocommerce_before_main_content' );
+	?>
+
+    <?php
 		if ( function_exists('yoast_breadcrumb') ) {
 		yoast_breadcrumb( '<div id="breadcrumbs" class="my-8">','</div>' );
 		}
 	?>
 
-	<?php while ( have_posts() ) : ?>
-		<?php the_post(); ?>
-		<?php wc_get_template_part( 'content', 'single-product' ); ?>
-	<?php endwhile; // end of the loop. ?>
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
 
-</div><!-- .container -->
+            <?php
+                $terms = get_the_terms( get_the_ID(), 'product_cat' );
+                //echo $terms[0]->slug;
+            ?>
+
+            <?php if($terms[0]->slug == 'seasons') : ?>
+                <div id="product-<?php the_ID(); ?>" class="grid grid-cols-[1fr_5fr] gap-8">
+                    <div>
+                    <h3 class="text-xl text-bold">Song Sets</h3>
+                            <?php
+                                $args = array(
+                                    'taxonomy'	=> 'product_cat',
+                                    'hide_empty' => false,
+                                    'child_of'   => $terms[0]->parent,
+                                );
+                                $sibling_categories = get_terms( $args );
+                            ?>
+
+                            <ul>
+                                <?php foreach ($sibling_categories as $cat) : ?> 
+                                    <li>
+                                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="text-rpgreen-900 hover:pl-4"><?php echo $cat->name;?><span> →</span></a>
+                                    </li>
+                                <?php endforeach;?>
+                            </ul>
+                    </div>
+                    <div>
+                        <?php wc_get_template_part( 'content', 'single-product' ); ?>
+                    </div>
+                </div>
+
+            <?php else : ?>
+
+			<?php wc_get_template_part( 'content', 'single-product' ); ?>
+
+            <?php endif;?>
+
+		<?php endwhile; // end of the loop. ?>
+
+	<?php
+		/**
+		 * woocommerce_after_main_content hook.
+		 *
+		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+		 */
+		//do_action( 'woocommerce_after_main_content' );
+	?>
+
+	<?php
+		/**
+		 * woocommerce_sidebar hook.
+		 *
+		 * @hooked woocommerce_get_sidebar - 10
+		 */
+		//do_action( 'woocommerce_sidebar' );
+	?>
 
 <?php
 get_footer( 'shop' );

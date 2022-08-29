@@ -51,6 +51,13 @@ module.exports = {
                 // Simple 16 column grid
                 '2': 'repeat(2, minmax(0, 1fr))',
             },
+            extend: {
+                zIndex: {
+                  '100': '100',
+                  '200': '200',
+                  '1000':'1000',
+                }
+              }
         },
         screens: {
             'xs': '480px',

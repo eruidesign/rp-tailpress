@@ -43,9 +43,73 @@ function tailpress_enqueue_scripts() {
 
 	wp_enqueue_style( 'tailpress', tailpress_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
 	wp_enqueue_script( 'tailpress', tailpress_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'tailpress_enqueue_scripts' );
+
+function wooswipe_scripts_method_2()
+{
+
+    if(is_product_category('seasons')){
+
+        $wooswipe_wp_plugin_path =  plugins_url() . '/wooswipe';
+        $options = get_option('wooswipe_options');
+
+        wp_enqueue_style('pswp-css', $wooswipe_wp_plugin_path . '/pswp/photoswipe.css');
+
+        if ($options['white_theme']) wp_enqueue_style('white_theme', $wooswipe_wp_plugin_path . '/pswp/white-skin/skin.css');
+        else wp_enqueue_style('pswp-skin', $wooswipe_wp_plugin_path . '/pswp/default-skin/default-skin.css');
+        wp_enqueue_style('slick-css', $wooswipe_wp_plugin_path . '/slick/slick.css');
+        wp_enqueue_style('slick-theme', $wooswipe_wp_plugin_path . '/slick/slick-theme.css');
+
+        wp_enqueue_script('pswp', $wooswipe_wp_plugin_path . '/pswp/photoswipe.min.js', null, null, true);
+        wp_enqueue_script('pswp-ui', $wooswipe_wp_plugin_path . '/pswp/photoswipe-ui-default.min.js', null, null, true);
+
+        wp_enqueue_script('slick', $wooswipe_wp_plugin_path . '/slick/slick.min.js', null, null, true);
+
+        wp_enqueue_style('wooswipe-css', $wooswipe_wp_plugin_path . '/wooswipe.css');
+
+
+        //after wp_enqueue_script
+        $template_Url = array('templateUrl' => $wooswipe_wp_plugin_path);
+        $wooswipe_data = array();
+        if ($options['pinterest']) {
+            $wooswipe_data = array('addpin' => true);
+        } else {
+            $wooswipe_data = array('addpin' => false);
+        }
+
+        if (!empty($options['icon_bg_color'])) {
+            $wooswipe_data['icon_bg_color'] = $options['icon_bg_color'];
+        } else {
+            $wooswipe_data['icon_bg_color'] = '#000000';
+        }
+
+        if (!empty($options['icon_stroke_color'])) {
+            $wooswipe_data['icon_stroke_color'] = $options['icon_stroke_color'];
+        } else {
+            $wooswipe_data['icon_stroke_color'] = '#ffffff';
+        }
+
+        
+        if ($options['product_main_slider'] == true) {
+            if ($options['product_main_slider_nav_arrow'] == true) {
+                $wooswipe_data['product_main_slider_nav_arrow'] = true;
+            }
+            $wooswipe_data['product_main_slider'] =  true;
+            wp_enqueue_script('wooswipe-main-image-swipe-js', $wooswipe_wp_plugin_path . '/wooswipe-main_image_swipe.js', null, null, true);
+            wp_localize_script('wooswipe-main-image-swipe-js', 'wooswipe_wp_plugin_path', $template_Url);
+            wp_localize_script('wooswipe-main-image-swipe-js', 'wooswipe_data', $wooswipe_data);
+        } else {
+            $wooswipe_data['product_main_slider'] =  false;
+            wp_enqueue_script('wooswipe-js', $wooswipe_wp_plugin_path . '/wooswipe.js', null, null, true);
+            wp_localize_script('wooswipe-js', 'wooswipe_wp_plugin_path', $template_Url);
+            wp_localize_script('wooswipe-js', 'wooswipe_data', $wooswipe_data);
+        }
+    }
+}
+add_action('wp_enqueue_scripts', 'wooswipe_scripts_method_2');
 
 /**
  * Get asset path.

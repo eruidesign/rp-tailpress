@@ -83,7 +83,7 @@ get_header( 'shop' );
 
     <?php elseif (in_array($parent_term_slug, ['wam','sos'])) : ?>
 
-    <div class="grid grid-cols-[1fr_4fr]">
+    <div class="grid grid-cols-[1fr_5fr] gap-8">
 
         <div>
             <h3 class="text-xl text-bold">Song Sets</h3>
@@ -98,7 +98,7 @@ get_header( 'shop' );
             <ul>
                 <?php foreach ($sibling_categories as $cat) : ?> 
                     <li>
-                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="text-rpgreen-900"><?php echo $cat->name;?><span> →</span></a>
+                        <a href="<?php echo esc_url(get_term_link($cat));?>" class="text-rpgreen-900 hover:pl-4"><?php echo $cat->name;?><span> →</span></a>
                     </li>
                 <?php endforeach;?>
             </ul>
@@ -116,27 +116,24 @@ get_header( 'shop' );
                             while ( have_posts() ) {
                                 the_post();
 
-                                /**
-                                 * Hook: woocommerce_shop_loop.
-                                 */
                                 do_action( 'woocommerce_shop_loop' );
 
                                 wc_get_template_part( 'content', 'single-bundle' );
 
-                                the_content();
+                                //the_content();
                             }
                         }
                         woocommerce_product_loop_end();
                     }
 
                 ?>
+
             </div>
 
 
     </div>
 
     <?php else : ?>
-
 
         <div class="products grid grid-cols-4 gap-4">
             <?php

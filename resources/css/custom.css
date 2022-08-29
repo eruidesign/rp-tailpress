@@ -151,7 +151,7 @@ p{
 
 
 .product .images{
-    @apply col-span-2;
+
 }
 .slick-list{
     margin: 0 0 0 0;
@@ -470,7 +470,7 @@ summary::-webkit-details-marker {
 /*  */
 .tax-product_cat {
   .pswp{
-    @apply hidden;
+    /*@apply hidden;*/
   }
   .woocommerce-tabs{
     @apply col-span-3;
@@ -485,4 +485,20 @@ summary::-webkit-details-marker {
 
 .woocommerce.columns-5 .products{
   @apply !grid;
+}
+
+.pswp{
+  @apply order-last;
+}
+
+
+.woocommerce-Tabs-panel .woocommerce .products{
+  @apply grid grid-cols-5 gap-1;
+}
+
+.grid-with_sidebar{
+
+}
+#header{
+  z-index: 1000;
 }

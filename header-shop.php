@@ -13,7 +13,7 @@
 
 <?php do_action( 'tailpress_site_before' ); ?>
 
-<div id="page" class="min-h-screen flex flex-col">
+<div id="page" class="min-h-screen">
 
 	<?php do_action( 'tailpress_header' ); ?>
 
@@ -70,8 +70,8 @@
 		</div>
 	</header>
 
-	<div id="content" class="site-content flex-grow">
+	<div id="content" class="container mx-auto site-content woocommerce">
 
-		<?php do_action( 'tailpress_content_start' ); ?>
+		<?php //do_action( 'tailpress_content_start' ); ?>
 
 		<main>

@@ -38,20 +38,17 @@
   }
 }
 
-.visible {
-  visibility: visible
-}
-
-.static {
-  position: static
-}
-
 .absolute {
   position: absolute
 }
 
 .relative {
   position: relative
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky
 }
 
 .inset-0 {
@@ -63,6 +60,10 @@
 
 .right-0 {
   right: 0px
+}
+
+.top-0 {
+  top: 0px
 }
 
 .z-50 {
@@ -83,14 +84,6 @@
 
 .order-1 {
   order: 1
-}
-
-.col-span-3 {
-  grid-column: span 3 / span 3
-}
-
-.col-span-1 {
-  grid-column: span 1 / span 1
 }
 
 .col-span-2 {
@@ -209,10 +202,6 @@
 
 .grid {
   display: grid
-}
-
-.\!grid {
-  display: grid !important
 }
 
 .hidden {
@@ -397,48 +386,24 @@
   grid-template-columns: repeat(4, minmax(0, 1fr))
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr))
-}
-
-.grid-cols-\[\] {
-  grid-template-columns: 
-}
-
-.grid-cols-\[1fr\] {
-  grid-template-columns: 1fr
-}
-
 .grid-cols-\[1fr_4fr\] {
   grid-template-columns: 1fr 4fr
-}
-
-.grid-cols-\[1fr_3fr\] {
-  grid-template-columns: 1fr 3fr
-}
-
-.grid-cols-\[2fr\] {
-  grid-template-columns: 2fr
-}
-
-.grid-cols-\[2fr_1fr\] {
-  grid-template-columns: 2fr 1fr
-}
-
-.grid-cols-\[1fr_4f\] {
-  grid-template-columns: 1fr 4f
 }
 
 .grid-cols-\[200px_1fr\] {
   grid-template-columns: 200px 1fr
 }
 
-.grid-cols-\[1fr_\] {
-  grid-template-columns: 1fr
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr))
 }
 
-.\!grid-cols-5 {
-  grid-template-columns: repeat(5, minmax(0, 1fr)) !important
+.grid-cols-\[1fr_5fr\] {
+  grid-template-columns: 1fr 5fr
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr))
 }
 
 .flex-row {
@@ -489,10 +454,6 @@
   gap: 2rem
 }
 
-.place-self-start {
-  place-self: start
-}
-
 .justify-self-end {
   justify-self: end
 }
@@ -515,6 +476,10 @@
 
 .rounded-2xl {
   border-radius: 1rem
+}
+
+.rounded-xl {
+  border-radius: 0.75rem
 }
 
 .rounded-tl-lg {
@@ -893,6 +858,12 @@
   opacity: 0.75
 }
 
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -1032,6 +1003,10 @@ body {
 .hover\:bg-rpgreen-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(123 164 64 / var(--tw-bg-opacity))
+}
+
+.hover\:pl-4:hover {
+  padding-left: 1rem
 }
 
 .hover\:text-rppurple-500:hover {
