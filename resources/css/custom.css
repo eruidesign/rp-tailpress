@@ -1,6 +1,6 @@
 article > *:not(.entry-content),
 .entry-content > * {
-    @apply mx-auto max-w-content;
+    /*@apply mx-auto max-w-content;*/
 }
 
 .entry-content, .block-editor-block-list__layout {
@@ -18,11 +18,11 @@ article > *:not(.entry-content),
 
     p, ul, ol {
         a {
-            @apply text-blue-500 underline;
+            /*@apply text-blue-500 underline;
 
             &:hover {
                 @apply no-underline;
-            }
+            }*/
         }
 
         @apply mb-8;
@@ -506,4 +506,25 @@ summary::-webkit-details-marker {
 }
 #header{
   z-index: 1000;
+}
+
+/* Product Details Box */
+th.label{
+  text-align: left;
+}
+select#pa_wam-type{
+  @apply p-2 rounded;
+}
+.sku_wrapper,
+.posted_in{
+  @apply font-bold;
+  span,a{
+    @apply font-normal;
+  }
+}
+.price{ 
+  @apply font-bold;
+  ins{
+    @apply no-underline;
+  }
 }

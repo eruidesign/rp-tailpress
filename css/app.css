@@ -995,6 +995,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-stone-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(245 245 244 / var(--tw-border-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1072,6 +1077,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(140 98 172 / var(--tw-bg-opacity));
 }
 
+.bg-rpgreen-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 187 112 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
 }
@@ -1118,12 +1128,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 1rem;
 }
 
-.p-8 {
-  padding: 2rem;
-}
-
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .px-4 {
@@ -1319,6 +1329,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(140 98 172 / var(--tw-text-opacity));
 }
 
+.no-underline {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1356,6 +1371,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .alignfull {
@@ -1429,10 +1454,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: #4b5563;
 }
 
-article > *:not(.entry-content), .entry-content > * {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 960px;
+article > *:not(.entry-content),
+.entry-content > * {
+  /*@apply mx-auto max-w-content;*/
 }
 
 .entry-content h1, .block-editor-block-list__layout h1 {
@@ -1450,19 +1474,12 @@ article > *:not(.entry-content), .entry-content > * {
   }
 
 .entry-content p a, .entry-content ul a, .entry-content ol a, .block-editor-block-list__layout p a, .block-editor-block-list__layout ul a, .block-editor-block-list__layout ol a {
-      --tw-text-opacity: 1;
-      color: rgb(59 130 246 / var(--tw-text-opacity));
-    }
+      /*@apply text-blue-500 underline;
 
-.entry-content p a, .entry-content ul a, .entry-content ol a, .block-editor-block-list__layout p a, .block-editor-block-list__layout ul a, .block-editor-block-list__layout ol a {
-      -webkit-text-decoration-line: underline;
-              text-decoration-line: underline;
+            &:hover {
+                @apply no-underline;
+            }*/
     }
-
-.entry-content p a:hover, .entry-content ul a:hover, .entry-content ol a:hover, .block-editor-block-list__layout p a:hover, .block-editor-block-list__layout ul a:hover, .block-editor-block-list__layout ol a:hover {
-        -webkit-text-decoration-line: none;
-                text-decoration-line: none;
-      }
 
 .entry-content p, .entry-content ul, .entry-content ol, .block-editor-block-list__layout p, .block-editor-block-list__layout ul, .block-editor-block-list__layout ol {
     margin-bottom: 2rem;
@@ -2088,6 +2105,34 @@ summary::-webkit-details-marker {
   z-index: 1000;
 }
 
+/* Product Details Box */
+
+th.label{
+  text-align: left;
+}
+
+select#pa_wam-type {
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.sku_wrapper, .posted_in {
+  font-weight: 700;
+}
+
+.sku_wrapper span, .sku_wrapper a, .posted_in span, .posted_in a {
+    font-weight: 400;
+  }
+
+.price {
+  font-weight: 700;
+}
+
+.price ins {
+    -webkit-text-decoration-line: none;
+            text-decoration-line: none;
+  }
+
 @font-face {
   font-family: 'ReenieBeanie';
 
@@ -2130,6 +2175,11 @@ summary::-webkit-details-marker {
   background-color: rgb(123 164 64 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-rpgreen-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 187 112 / var(--tw-bg-opacity));
+}
+
 .hover\:pl-4:hover {
   padding-left: 1rem;
 }
@@ -2142,6 +2192,11 @@ summary::-webkit-details-marker {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-rpgreen-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(156 187 112 / var(--tw-text-opacity));
 }
 
 @media (min-width: 600px) {

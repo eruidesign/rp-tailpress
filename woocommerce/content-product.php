@@ -25,13 +25,13 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 
-<li class="overflow-hidden rounded-lg bg-gray-100 flex flex-col">
+<li class="overflow-hidden rounded-lg bg-white flex flex-col border border-stone-100">
 	<div class="text-center flex-grow">
 		<?php the_post_thumbnail('woocommerce_thumbnail',array('class' => 'w-full'));?>
-		<h3 class="my-4 text-xl"><?php the_title();?></h3>
-		<div class="text-gray-400 p-4 text-sm text-justify"><?php the_excerpt();?></div>
+		<!--<h3 class="my-4 text-xl"><?php the_title();?></h3>
+		<div class="text-gray-400 p-4 text-sm text-justify"><?php the_excerpt();?></div>-->
 	</div>
 	<div class="p-4 flex">
-		<a href="<?php the_permalink();?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">More<span> →</span></a>
+		<a href="<?php the_permalink();?>" class="grow bg-rpgreen-900 text-white text-center no-underline rounded p-2 justify-self-end hover:bg-rpgreen-500 transition-all"><?php the_title();?><span> →</span></a>
 	</div>
 </li>
