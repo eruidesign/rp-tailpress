@@ -26,7 +26,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 ?>
 
 <li class="overflow-hidden rounded-lg bg-white flex md:flex-col border border-stone-100">
-	<div class="text-center md:flex-grow md:basis-1/4">
+	<div class="text-center md:flex-grow basis-1/5">
 		<?php the_post_thumbnail('woocommerce_thumbnail',array('class' => 'w-full'));?>
 		<!--<h3 class="my-4 text-xl"><?php the_title();?></h3>
 		<div class="text-gray-400 p-4 text-sm text-justify"><?php the_excerpt();?></div>-->

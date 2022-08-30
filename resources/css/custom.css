@@ -493,7 +493,7 @@ summary::-webkit-details-marker {
 
 
 .woocommerce-Tabs-panel .woocommerce .products{
-  @apply grid grid-cols-5 gap-1;
+  @apply md:grid md:grid-cols-5 gap-1;
 }
 
 .woocommerce-Tabs-panel .woocommerce .products::before,
