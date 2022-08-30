@@ -32,7 +32,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'grid grid-cols-2 gap-8', $product ); ?>>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( 'grid grid-cols-1 md:grid-cols-2 gap-8', $product ); ?>>
 
 	<?php
 	/**

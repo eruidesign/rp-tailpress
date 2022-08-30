@@ -83,7 +83,7 @@ get_header( 'shop' );
 
     <?php elseif (in_array($parent_term_slug, ['wam','sos'])) : ?>
 
-    <div class="grid grid-cols-[1fr_5fr] gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_5fr] gap-8">
 
         <div>
             <h3 class="text-xl text-bold">Song Sets</h3>
@@ -135,7 +135,7 @@ get_header( 'shop' );
 
     <?php else : ?>
 
-        <div class="products grid grid-cols-4 gap-4">
+        <div class="products grid grid-cols-1 md:grid-cols-4 gap-4">
             <?php
 
                 if ( wc_get_loop_prop( 'total' ) ) {

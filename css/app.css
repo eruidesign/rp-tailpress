@@ -2274,6 +2274,14 @@ select#pa_wam-type {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .md\:grid-cols-\[1fr_5fr\] {
+    grid-template-columns: 1fr 5fr;
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
   .md\:bg-rpgreen-900 {
     --tw-bg-opacity: 1;
     background-color: rgb(123 164 64 / var(--tw-bg-opacity));
