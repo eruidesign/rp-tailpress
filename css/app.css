@@ -2270,6 +2270,22 @@ select#pa_wam-type {
     width: 50%;
   }
 
+  .md\:flex-grow {
+    flex-grow: 1;
+  }
+
+  .md\:grow {
+    flex-grow: 1;
+  }
+
+  .md\:grow-0 {
+    flex-grow: 0;
+  }
+
+  .md\:basis-1\/4 {
+    flex-basis: 25%;
+  }
+
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2284,6 +2300,10 @@ select#pa_wam-type {
 
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
   }
 
   .md\:bg-rpgreen-900 {
