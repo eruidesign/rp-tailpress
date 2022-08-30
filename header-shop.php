@@ -70,7 +70,7 @@
 		</div>
 	</header>
 
-	<div id="content" class="container mx-auto site-content woocommerce">
+	<div id="content" class="site-content woocommerce">
 
 		<?php //do_action( 'tailpress_content_start' ); ?>
 

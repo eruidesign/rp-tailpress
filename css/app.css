@@ -1329,6 +1329,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(140 98 172 / var(--tw-text-opacity));
 }
 
+.text-stone-100 {
+  --tw-text-opacity: 1;
+  color: rgb(245 245 244 / var(--tw-text-opacity));
+}
+
 .no-underline {
   -webkit-text-decoration-line: none;
           text-decoration-line: none;
@@ -2178,6 +2183,11 @@ select#pa_wam-type {
 .hover\:bg-rpgreen-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(156 187 112 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-purple-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(168 85 247 / var(--tw-bg-opacity));
 }
 
 .hover\:pl-4:hover {

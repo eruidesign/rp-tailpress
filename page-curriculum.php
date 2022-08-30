@@ -8,9 +8,9 @@
 
 		<section class="md:min-h-[600px] relative overflow-hidden">
 			<img src="<?php echo $banner_url;?>" class="h-[100%] w-auto max-w-fit">
-			<div class="section-container md:absolute inset-0 z-50 md:flex flex-row-reverse md:min-h-[600px]">
+			<div class="section-container md:absolute inset-0 z-50 md:flex flex-row md:min-h-[600px]">
 				
-				<svg id="shape1" viewBox="0 0 354.8 799.9" class="hidden md:block order-2 min-w-[267px]">
+				<!--<svg id="shape1" viewBox="0 0 354.8 799.9" class="hidden md:block order-2 min-w-[267px]">
 					<path class="cls-1 fill-rpgray-900" d="M304.7,238.7c-18.1,145.1-36.7,295.1-190.5,507.4c-13.6,18.8-27.3,36.7-41,53.8h281.6V0
 					C323.8,85.1,314.5,159.8,304.7,238.7z"/>
 					<path class="cls-2 fill-rpgray-900" d="M284.8,236.3c9.7-78,18.9-151.9,48.7-236.3h-31.4c-26.8,82.6-36,156.9-45,229c-17.6,141.5-34.2,275-176.1,470.9
@@ -22,8 +22,21 @@
 						<h1 class="mb-5 text-5xl font-bold"><?php the_title();?></h1>
 						<p class="mb-5"><?php the_excerpt();?></p>
 					</div>
-				</div>
-			</div>
+				</div>-->
+                <svg id="shape2" viewBox="0 0 354.8 799.9" class="hidden md:block order-2 min-w-[267px] ml-[-1px]">
+                    <path class="st0 fill-rpgreen-900" d="M0,0l0,799.9h281.6c-13.7-17-27.4-35-41-53.8C86.9,533.8,68.2,383.8,50.1,238.7C40.3,159.8,31,85.1,0,0z"/>
+                    <path class="st1 fill-rpgreen-900 opacity-3" d="M256.8,734.4c16.8,23.2,33.7,45,50.7,65.5h47.3c-28.9-31.7-56-65-81.1-99.9C131.8,504,115.2,370.5,97.6,229
+        c-9-72.1-18.2-146.4-45-229L21.2,0C51,84.4,60.3,158.3,70,236.3C87.7,378.8,106.1,526.2,256.8,734.4z"/>
+                </svg>
+
+                <div class="hero-content p-8 bg-rpgreen-900 basis-[32rem] text-white order-1 flex items-center">
+                    <div class="max-w-md">
+                        <h1 class="mb-5 text-5xl font-bold"><?php the_title();?></h1>
+						<p class="mb-5"><?php the_excerpt();?></p>
+                    </div>
+                </div>
+
+                </div>
 		</section>
 
 

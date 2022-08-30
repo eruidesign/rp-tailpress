@@ -28,7 +28,7 @@
                             <div class="text-gray-400 p-4 text-sm text-justify"><?php echo apply_filters('the_content', $page->post_content);?></div>
                         </div>
                         <div class="p-4 flex">
-                            <a href="<?php echo get_page_link( $page->ID ); ?>" class="grow bg-gray-500 text-white text-center rounded p-2 justify-self-end hover:bg-gray-400">Contact for more info<span> →</span></a>
+                            <a href="<?php echo get_page_link( $page->ID ); ?>" class="grow bg-rppurple-900 text-white text-center rounded p-2 justify-self-end hover:bg-purple-500">Contact for more info<span> →</span></a>
                         </div>
                     </div>
                 <?php endforeach;?>
