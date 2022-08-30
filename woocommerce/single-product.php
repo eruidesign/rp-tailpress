@@ -21,6 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
+<div class="container my-8 mx-auto">
+
 	<?php
 		/**
 		 * woocommerce_before_main_content hook.
@@ -96,6 +98,7 @@ get_header( 'shop' ); ?>
 		 */
 		//do_action( 'woocommerce_sidebar' );
 	?>
+</div>
 
 <?php
 get_footer( 'shop' );
