@@ -32,7 +32,7 @@
                 <div class="hero-content p-8 bg-rpgreen-900 basis-[32rem] text-white order-1 flex items-center">
                     <div class="max-w-md">
                         <h1 class="mb-5 text-5xl font-bold"><?php the_title();?></h1>
-						<p class="mb-5"><?php the_excerpt();?></p>
+						<div class="section-description text-stone-100 font-reenie text-5xl"><?php the_excerpt();?></div>
                     </div>
                 </div>
 
