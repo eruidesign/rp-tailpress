@@ -48,7 +48,7 @@ get_header( 'shop' ); ?>
             ?>
 
             <?php if($terms[0]->slug == 'seasons') : ?>
-                <div id="product-<?php the_ID(); ?>" class="grid grid-cols-[1fr_5fr] gap-8">
+                <div id="product-<?php the_ID(); ?>" class="md:grid md:grid-cols-[1fr_5fr] gap-8">
                     <div>
                     <h3 class="text-xl text-bold">Song Sets</h3>
                             <?php
