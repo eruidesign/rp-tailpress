@@ -2258,6 +2258,10 @@ select#pa_wam-type {
     display: flex;
   }
 
+  .md\:grid {
+    display: grid;
+  }
+
   .md\:min-h-\[600px\] {
     min-height: 600px;
   }
