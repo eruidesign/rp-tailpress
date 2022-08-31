@@ -20,8 +20,8 @@
     $section_5 = get_post($section_5_ID);
 ?>
 
-<section class="hero min-h-[600px] flex items-end bg-cover bg-left-bottom" style="background-image: url(<?php echo get_the_post_thumbnail_url($section_1_ID,'banner-1440x600');?>);">
-    <div class="p-8 hero-content grid sm:grid-cols-1 md:grid-cols-2 gap-4">
+<section class="hero min-h-[600px] bg-cover bg-left-bottom" style="background-image: url(<?php echo get_the_post_thumbnail_url($section_1_ID,'banner-1440x600');?>);">
+    <div class="p-8 hero-content grid grid-cols-1 md:grid-cols-2 gap-4">
 
         <?php echo apply_filters('the_content', $section_1->post_content);?>
 
