@@ -2302,6 +2302,14 @@ select#pa_wam-type {
   }
 }
 
+@media (min-width: 600px) {
+  @media (min-width: 782px) {
+    .sm\:md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
 @media (min-width: 960px) {
   .lg\:-mx-4 {
     margin-left: -1rem;
