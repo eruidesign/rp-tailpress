@@ -361,3 +361,5 @@ add_action( 'woocommerce_product_query', function ($query) {
 	}
 
 } ); 
+
+add_theme_support( 'responsive-embeds' );
